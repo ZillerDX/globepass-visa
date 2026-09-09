@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+:root {
+  /* User-Selected Palette Tokens */
+  --vanilla-ground: #FCF9EA;
+  --mineral-teal: #BADFDB;
+  --coral-peach: #FFA4A4;
+  --blush-peach: #FFBDBD;
+
+  /* Surfaces */
+  --surface-ground: var(--vanilla-ground);
+  --surface-card: #FFFFFF;
+  --surface-raised: #FFFEF9;
+  --surface-teal-wash: rgba(186, 223, 219, 0.22);
+  --surface-peach-wash: rgba(255, 164, 164, 0.18);
+  --surface-blush-wash: rgba(255, 189, 189, 0.25);
+
+  /* Ink Hierarchy */
+  --ink: #1A232B;
+  --ink-secondary: #4A5866;
+  --ink-muted: #7D8D9C;
+  --ink-faint: #B0BCC7;
+
+  /* Contrast Accents for Text/Icons (WCAG AA Compliant) */
+  --coral-accent: #FFA4A4;
+  --coral-ink: #BA3F3F;
+  --teal-accent: #BADFDB;
+  --teal-ink: #1D6B63;
+
+  /* Lines and Borders */
+  --border-subtle: rgba(26, 35, 43, 0.07);
+  --border-teal: rgba(186, 223, 219, 0.6);
+  --border-peach: rgba(255, 164, 164, 0.5);
+
+  /* Typography */
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-prompt), system-ui, sans-serif;
+
+  /* Spring Physics */
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 6px -1px rgba(26, 35, 43, 0.04), 0 1px 3px rgba(26, 35, 43, 0.02);
+  --shadow-card: 0 12px 36px -10px rgba(26, 35, 43, 0.07), 0 3px 10px -2px rgba(26, 35, 43, 0.03);
+  --shadow-button: 0 8px 20px -4px rgba(255, 164, 164, 0.5), 0 3px 6px -1px rgba(255, 164, 164, 0.3);
+}
+
+body {
+  background-color: var(--surface-ground);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Editorial Serif Heading Role */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.015em;
+}
+
+/* Micro-typography uppercase tracking */
+.track-eyebrow {
+  letter-spacing: 0.28em;
+  text-indent: 0.28em;
+}
+
+.track-micro {
+  letter-spacing: 0.18em;
+  text-indent: 0.18em;
+}
+
+/* Tabular figures for dates and numbers */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle vanilla dot matrix pattern */
+.vanilla-pattern {
+  background-color: var(--surface-ground);
+  background-image: radial-gradient(rgba(26, 35, 43, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Smooth pastel scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F4EED8;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8CEB6;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #BFB499;
+}
+
+/* Shimmer sweep on CTA */
+@keyframes coralSweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-coral-sweep {
+  animation: coralSweep 3s infinite;
+}

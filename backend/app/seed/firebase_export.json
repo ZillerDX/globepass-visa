@@ -1,0 +1,1296 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "total_countries": 199,
+    "total_cached_guides": 2,
+    "target_collections": [
+      "countries",
+      "visa_guides"
+    ]
+  },
+  "collections": {
+    "countries": {
+      "AF": {
+        "code": "AF",
+        "name_en": "Afghanistan",
+        "name_th": "อัฟกานิสถาน",
+        "flag": "🇦🇫"
+      },
+      "AL": {
+        "code": "AL",
+        "name_en": "Albania",
+        "name_th": "แอลเบเนีย",
+        "flag": "🇦🇱"
+      },
+      "DZ": {
+        "code": "DZ",
+        "name_en": "Algeria",
+        "name_th": "แอลจีเรีย",
+        "flag": "🇩🇿"
+      },
+      "AD": {
+        "code": "AD",
+        "name_en": "Andorra",
+        "name_th": "อันดอร์รา",
+        "flag": "🇦🇩"
+      },
+      "AO": {
+        "code": "AO",
+        "name_en": "Angola",
+        "name_th": "แองโกลา",
+        "flag": "🇦🇴"
+      },
+      "AG": {
+        "code": "AG",
+        "name_en": "Antigua and Barbuda",
+        "name_th": "แอนติกาและบาร์บูดา",
+        "flag": "🇦🇬"
+      },
+      "AR": {
+        "code": "AR",
+        "name_en": "Argentina",
+        "name_th": "อาร์เจนตินา",
+        "flag": "🇦🇷"
+      },
+      "AM": {
+        "code": "AM",
+        "name_en": "Armenia",
+        "name_th": "อาร์เมเนีย",
+        "flag": "🇦🇲"
+      },
+      "AU": {
+        "code": "AU",
+        "name_en": "Australia",
+        "name_th": "ออสเตรเลีย",
+        "flag": "🇦🇺"
+      },
+      "AT": {
+        "code": "AT",
+        "name_en": "Austria",
+        "name_th": "ออสเตรีย",
+        "flag": "🇦🇹"
+      },
+      "AZ": {
+        "code": "AZ",
+        "name_en": "Azerbaijan",
+        "name_th": "อาเซอร์ไบจาน",
+        "flag": "🇦🇿"
+      },
+      "BS": {
+        "code": "BS",
+        "name_en": "Bahamas",
+        "name_th": "บาฮามาส",
+        "flag": "🇧🇸"
+      },
+      "BH": {
+        "code": "BH",
+        "name_en": "Bahrain",
+        "name_th": "บาห์เรน",
+        "flag": "🇧🇭"
+      },
+      "BD": {
+        "code": "BD",
+        "name_en": "Bangladesh",
+        "name_th": "บังกลาเทศ",
+        "flag": "🇧🇩"
+      },
+      "BB": {
+        "code": "BB",
+        "name_en": "Barbados",
+        "name_th": "บาร์เบโดส",
+        "flag": "🇧🇧"
+      },
+      "BY": {
+        "code": "BY",
+        "name_en": "Belarus",
+        "name_th": "เบลารุส",
+        "flag": "🇧🇾"
+      },
+      "BE": {
+        "code": "BE",
+        "name_en": "Belgium",
+        "name_th": "เบลเยียม",
+        "flag": "🇧🇪"
+      },
+      "BZ": {
+        "code": "BZ",
+        "name_en": "Belize",
+        "name_th": "เบลีซ",
+        "flag": "🇧🇿"
+      },
+      "BJ": {
+        "code": "BJ",
+        "name_en": "Benin",
+        "name_th": "เบนิน",
+        "flag": "🇧🇯"
+      },
+      "BT": {
+        "code": "BT",
+        "name_en": "Bhutan",
+        "name_th": "ภูฏาน",
+        "flag": "🇧🇹"
+      },
+      "BO": {
+        "code": "BO",
+        "name_en": "Bolivia",
+        "name_th": "โบลิเวีย",
+        "flag": "🇧🇴"
+      },
+      "BA": {
+        "code": "BA",
+        "name_en": "Bosnia and Herzegovina",
+        "name_th": "บอสเนียและเฮอร์เซโกวีนา",
+        "flag": "🇧🇦"
+      },
+      "BW": {
+        "code": "BW",
+        "name_en": "Botswana",
+        "name_th": "บอตสวานา",
+        "flag": "🇧🇼"
+      },
+      "BR": {
+        "code": "BR",
+        "name_en": "Brazil",
+        "name_th": "บราซิล",
+        "flag": "🇧🇷"
+      },
+      "BN": {
+        "code": "BN",
+        "name_en": "Brunei",
+        "name_th": "บรูไน",
+        "flag": "🇧🇳"
+      },
+      "BG": {
+        "code": "BG",
+        "name_en": "Bulgaria",
+        "name_th": "บัลแกเรีย",
+        "flag": "🇧🇬"
+      },
+      "BF": {
+        "code": "BF",
+        "name_en": "Burkina Faso",
+        "name_th": "บูร์กินาฟาโซ",
+        "flag": "🇧🇫"
+      },
+      "BI": {
+        "code": "BI",
+        "name_en": "Burundi",
+        "name_th": "บุรุนดี",
+        "flag": "🇧🇮"
+      },
+      "KH": {
+        "code": "KH",
+        "name_en": "Cambodia",
+        "name_th": "กัมพูชา",
+        "flag": "🇰🇭"
+      },
+      "CM": {
+        "code": "CM",
+        "name_en": "Cameroon",
+        "name_th": "แคเมอรูน",
+        "flag": "🇨🇲"
+      },
+      "CA": {
+        "code": "CA",
+        "name_en": "Canada",
+        "name_th": "แคนาดา",
+        "flag": "🇨🇦"
+      },
+      "CV": {
+        "code": "CV",
+        "name_en": "Cape Verde",
+        "name_th": "เคปเวิร์ด",
+        "flag": "🇨🇻"
+      },
+      "CF": {
+        "code": "CF",
+        "name_en": "Central African Republic",
+        "name_th": "สาธารณรัฐแอฟริกากลาง",
+        "flag": "🇨🇫"
+      },
+      "TD": {
+        "code": "TD",
+        "name_en": "Chad",
+        "name_th": "ชาด",
+        "flag": "🇹🇩"
+      },
+      "CL": {
+        "code": "CL",
+        "name_en": "Chile",
+        "name_th": "ชิลี",
+        "flag": "🇨🇱"
+      },
+      "CN": {
+        "code": "CN",
+        "name_en": "China",
+        "name_th": "จีน",
+        "flag": "🇨🇳"
+      },
+      "CO": {
+        "code": "CO",
+        "name_en": "Colombia",
+        "name_th": "โคลอมเบีย",
+        "flag": "🇨🇴"
+      },
+      "KM": {
+        "code": "KM",
+        "name_en": "Comoros",
+        "name_th": "คอโมโรส",
+        "flag": "🇰🇲"
+      },
+      "CG": {
+        "code": "CG",
+        "name_en": "Congo",
+        "name_th": "คองโก",
+        "flag": "🇨🇬"
+      },
+      "CR": {
+        "code": "CR",
+        "name_en": "Costa Rica",
+        "name_th": "คอสตาริกา",
+        "flag": "🇨🇷"
+      },
+      "HR": {
+        "code": "HR",
+        "name_en": "Croatia",
+        "name_th": "โครเอเชีย",
+        "flag": "🇭🇷"
+      },
+      "CU": {
+        "code": "CU",
+        "name_en": "Cuba",
+        "name_th": "คิวบา",
+        "flag": "🇨🇺"
+      },
+      "CY": {
+        "code": "CY",
+        "name_en": "Cyprus",
+        "name_th": "ไซปรัส",
+        "flag": "🇨🇾"
+      },
+      "CZ": {
+        "code": "CZ",
+        "name_en": "Czech Republic",
+        "name_th": "เช็ก",
+        "flag": "🇨🇿"
+      },
+      "CD": {
+        "code": "CD",
+        "name_en": "DR Congo",
+        "name_th": "สาธารณรัฐประชาธิปไตยคองโก",
+        "flag": "🇨🇩"
+      },
+      "DK": {
+        "code": "DK",
+        "name_en": "Denmark",
+        "name_th": "เดนมาร์ก",
+        "flag": "🇩🇰"
+      },
+      "DJ": {
+        "code": "DJ",
+        "name_en": "Djibouti",
+        "name_th": "จิบูตี",
+        "flag": "🇩🇯"
+      },
+      "DM": {
+        "code": "DM",
+        "name_en": "Dominica",
+        "name_th": "ดอมินีกา",
+        "flag": "🇩🇲"
+      },
+      "DO": {
+        "code": "DO",
+        "name_en": "Dominican Republic",
+        "name_th": "สาธารณรัฐโดมินิกัน",
+        "flag": "🇩🇴"
+      },
+      "EC": {
+        "code": "EC",
+        "name_en": "Ecuador",
+        "name_th": "เอกวาดอร์",
+        "flag": "🇪🇨"
+      },
+      "EG": {
+        "code": "EG",
+        "name_en": "Egypt",
+        "name_th": "อียิปต์",
+        "flag": "🇪🇬"
+      },
+      "SV": {
+        "code": "SV",
+        "name_en": "El Salvador",
+        "name_th": "เอลซัลวาดอร์",
+        "flag": "🇸🇻"
+      },
+      "GQ": {
+        "code": "GQ",
+        "name_en": "Equatorial Guinea",
+        "name_th": "อิเควทอเรียลกินี",
+        "flag": "🇬🇶"
+      },
+      "ER": {
+        "code": "ER",
+        "name_en": "Eritrea",
+        "name_th": "เอริเทรีย",
+        "flag": "🇪🇷"
+      },
+      "EE": {
+        "code": "EE",
+        "name_en": "Estonia",
+        "name_th": "เอสโตเนีย",
+        "flag": "🇪🇪"
+      },
+      "SZ": {
+        "code": "SZ",
+        "name_en": "Eswatini",
+        "name_th": "เอสวาตินี",
+        "flag": "🇸🇿"
+      },
+      "ET": {
+        "code": "ET",
+        "name_en": "Ethiopia",
+        "name_th": "เอธิโอเปีย",
+        "flag": "🇪🇹"
+      },
+      "FJ": {
+        "code": "FJ",
+        "name_en": "Fiji",
+        "name_th": "ฟิจิ",
+        "flag": "🇫🇯"
+      },
+      "FI": {
+        "code": "FI",
+        "name_en": "Finland",
+        "name_th": "ฟินแลนด์",
+        "flag": "🇫🇮"
+      },
+      "FR": {
+        "code": "FR",
+        "name_en": "France",
+        "name_th": "ฝรั่งเศส",
+        "flag": "🇫🇷"
+      },
+      "GA": {
+        "code": "GA",
+        "name_en": "Gabon",
+        "name_th": "กาบอง",
+        "flag": "🇬🇦"
+      },
+      "GM": {
+        "code": "GM",
+        "name_en": "Gambia",
+        "name_th": "แกมเบีย",
+        "flag": "🇬🇲"
+      },
+      "GE": {
+        "code": "GE",
+        "name_en": "Georgia",
+        "name_th": "จอร์เจีย",
+        "flag": "🇬🇪"
+      },
+      "DE": {
+        "code": "DE",
+        "name_en": "Germany",
+        "name_th": "เยอรมนี",
+        "flag": "🇩🇪"
+      },
+      "GH": {
+        "code": "GH",
+        "name_en": "Ghana",
+        "name_th": "กานา",
+        "flag": "🇬🇭"
+      },
+      "GR": {
+        "code": "GR",
+        "name_en": "Greece",
+        "name_th": "กรีซ",
+        "flag": "🇬🇷"
+      },
+      "GD": {
+        "code": "GD",
+        "name_en": "Grenada",
+        "name_th": "เกรเนดา",
+        "flag": "🇬🇩"
+      },
+      "GT": {
+        "code": "GT",
+        "name_en": "Guatemala",
+        "name_th": "กัวเตมาลา",
+        "flag": "🇬🇹"
+      },
+      "GN": {
+        "code": "GN",
+        "name_en": "Guinea",
+        "name_th": "กินี",
+        "flag": "🇬🇳"
+      },
+      "GW": {
+        "code": "GW",
+        "name_en": "Guinea-Bissau",
+        "name_th": "กินี-บิสเซา",
+        "flag": "🇬🇼"
+      },
+      "GY": {
+        "code": "GY",
+        "name_en": "Guyana",
+        "name_th": "กายอานา",
+        "flag": "🇬🇾"
+      },
+      "HT": {
+        "code": "HT",
+        "name_en": "Haiti",
+        "name_th": "เฮติ",
+        "flag": "🇭🇹"
+      },
+      "HN": {
+        "code": "HN",
+        "name_en": "Honduras",
+        "name_th": "ฮอนดูรัส",
+        "flag": "🇭🇳"
+      },
+      "HK": {
+        "code": "HK",
+        "name_en": "Hong Kong",
+        "name_th": "ฮ่องกง",
+        "flag": "🇭🇰"
+      },
+      "HU": {
+        "code": "HU",
+        "name_en": "Hungary",
+        "name_th": "ฮังการี",
+        "flag": "🇭🇺"
+      },
+      "IS": {
+        "code": "IS",
+        "name_en": "Iceland",
+        "name_th": "ไอซ์แลนด์",
+        "flag": "🇮🇸"
+      },
+      "IN": {
+        "code": "IN",
+        "name_en": "India",
+        "name_th": "อินเดีย",
+        "flag": "🇮🇳"
+      },
+      "ID": {
+        "code": "ID",
+        "name_en": "Indonesia",
+        "name_th": "อินโดนีเซีย",
+        "flag": "🇮🇩"
+      },
+      "IR": {
+        "code": "IR",
+        "name_en": "Iran",
+        "name_th": "อิหร่าน",
+        "flag": "🇮🇷"
+      },
+      "IQ": {
+        "code": "IQ",
+        "name_en": "Iraq",
+        "name_th": "อิรัก",
+        "flag": "🇮🇶"
+      },
+      "IE": {
+        "code": "IE",
+        "name_en": "Ireland",
+        "name_th": "ไอร์แลนด์",
+        "flag": "🇮🇪"
+      },
+      "IL": {
+        "code": "IL",
+        "name_en": "Israel",
+        "name_th": "อิสราเอล",
+        "flag": "🇮🇱"
+      },
+      "IT": {
+        "code": "IT",
+        "name_en": "Italy",
+        "name_th": "อิตาลี",
+        "flag": "🇮🇹"
+      },
+      "CI": {
+        "code": "CI",
+        "name_en": "Ivory Coast",
+        "name_th": "โกตดิวัวร์",
+        "flag": "🇨🇮"
+      },
+      "JM": {
+        "code": "JM",
+        "name_en": "Jamaica",
+        "name_th": "จาเมกา",
+        "flag": "🇯🇲"
+      },
+      "JP": {
+        "code": "JP",
+        "name_en": "Japan",
+        "name_th": "ญี่ปุ่น",
+        "flag": "🇯🇵"
+      },
+      "JO": {
+        "code": "JO",
+        "name_en": "Jordan",
+        "name_th": "จอร์แดน",
+        "flag": "🇯🇴"
+      },
+      "KZ": {
+        "code": "KZ",
+        "name_en": "Kazakhstan",
+        "name_th": "คาซัคสถาน",
+        "flag": "🇰🇿"
+      },
+      "KE": {
+        "code": "KE",
+        "name_en": "Kenya",
+        "name_th": "เคนยา",
+        "flag": "🇰🇪"
+      },
+      "KI": {
+        "code": "KI",
+        "name_en": "Kiribati",
+        "name_th": "คิริบาส",
+        "flag": "🇰🇮"
+      },
+      "XK": {
+        "code": "XK",
+        "name_en": "Kosovo",
+        "name_th": "คอซอวอ",
+        "flag": "🇽🇰"
+      },
+      "KW": {
+        "code": "KW",
+        "name_en": "Kuwait",
+        "name_th": "คูเวต",
+        "flag": "🇰🇼"
+      },
+      "KG": {
+        "code": "KG",
+        "name_en": "Kyrgyzstan",
+        "name_th": "คีร์กีซสถาน",
+        "flag": "🇰🇬"
+      },
+      "LA": {
+        "code": "LA",
+        "name_en": "Laos",
+        "name_th": "ลาว",
+        "flag": "🇱🇦"
+      },
+      "LV": {
+        "code": "LV",
+        "name_en": "Latvia",
+        "name_th": "ลัตเวีย",
+        "flag": "🇱🇻"
+      },
+      "LB": {
+        "code": "LB",
+        "name_en": "Lebanon",
+        "name_th": "เลบานอน",
+        "flag": "🇱🇧"
+      },
+      "LS": {
+        "code": "LS",
+        "name_en": "Lesotho",
+        "name_th": "เลโซโท",
+        "flag": "🇱🇸"
+      },
+      "LR": {
+        "code": "LR",
+        "name_en": "Liberia",
+        "name_th": "ไลบีเรีย",
+        "flag": "🇱🇷"
+      },
+      "LY": {
+        "code": "LY",
+        "name_en": "Libya",
+        "name_th": "ลิเบีย",
+        "flag": "🇱🇾"
+      },
+      "LI": {
+        "code": "LI",
+        "name_en": "Liechtenstein",
+        "name_th": "ลิกเตนสไตน์",
+        "flag": "🇱🇮"
+      },
+      "LT": {
+        "code": "LT",
+        "name_en": "Lithuania",
+        "name_th": "ลิทัวเนีย",
+        "flag": "🇱🇹"
+      },
+      "LU": {
+        "code": "LU",
+        "name_en": "Luxembourg",
+        "name_th": "ลักเซมเบิร์ก",
+        "flag": "🇱🇺"
+      },
+      "MO": {
+        "code": "MO",
+        "name_en": "Macao",
+        "name_th": "มาเก๊า",
+        "flag": "🇲🇴"
+      },
+      "MG": {
+        "code": "MG",
+        "name_en": "Madagascar",
+        "name_th": "มาดากัสการ์",
+        "flag": "🇲🇬"
+      },
+      "MW": {
+        "code": "MW",
+        "name_en": "Malawi",
+        "name_th": "มาลาวี",
+        "flag": "🇲🇼"
+      },
+      "MY": {
+        "code": "MY",
+        "name_en": "Malaysia",
+        "name_th": "มาเลเซีย",
+        "flag": "🇲🇾"
+      },
+      "MV": {
+        "code": "MV",
+        "name_en": "Maldives",
+        "name_th": "มัลดีฟส์",
+        "flag": "🇲🇻"
+      },
+      "ML": {
+        "code": "ML",
+        "name_en": "Mali",
+        "name_th": "มาลี",
+        "flag": "🇲🇱"
+      },
+      "MT": {
+        "code": "MT",
+        "name_en": "Malta",
+        "name_th": "มอลตา",
+        "flag": "🇲🇹"
+      },
+      "MH": {
+        "code": "MH",
+        "name_en": "Marshall Islands",
+        "name_th": "หมู่เกาะมาร์แชลล์",
+        "flag": "🇲🇭"
+      },
+      "MR": {
+        "code": "MR",
+        "name_en": "Mauritania",
+        "name_th": "มอริเตเนีย",
+        "flag": "🇲🇷"
+      },
+      "MU": {
+        "code": "MU",
+        "name_en": "Mauritius",
+        "name_th": "มอริเชียส",
+        "flag": "🇲🇺"
+      },
+      "MX": {
+        "code": "MX",
+        "name_en": "Mexico",
+        "name_th": "เม็กซิโก",
+        "flag": "🇲🇽"
+      },
+      "FM": {
+        "code": "FM",
+        "name_en": "Micronesia",
+        "name_th": "ไมโครนีเซีย",
+        "flag": "🇫🇲"
+      },
+      "MD": {
+        "code": "MD",
+        "name_en": "Moldova",
+        "name_th": "มอลโดวา",
+        "flag": "🇲🇩"
+      },
+      "MC": {
+        "code": "MC",
+        "name_en": "Monaco",
+        "name_th": "โมนาโก",
+        "flag": "🇲🇨"
+      },
+      "MN": {
+        "code": "MN",
+        "name_en": "Mongolia",
+        "name_th": "มองโกเลีย",
+        "flag": "🇲🇳"
+      },
+      "ME": {
+        "code": "ME",
+        "name_en": "Montenegro",
+        "name_th": "มอนเตเนโกร",
+        "flag": "🇲🇪"
+      },
+      "MA": {
+        "code": "MA",
+        "name_en": "Morocco",
+        "name_th": "โมร็อกโก",
+        "flag": "🇲🇦"
+      },
+      "MZ": {
+        "code": "MZ",
+        "name_en": "Mozambique",
+        "name_th": "โมซัมบิก",
+        "flag": "🇲🇿"
+      },
+      "MM": {
+        "code": "MM",
+        "name_en": "Myanmar",
+        "name_th": "เมียนมา",
+        "flag": "🇲🇲"
+      },
+      "NA": {
+        "code": "NA",
+        "name_en": "Namibia",
+        "name_th": "นามิเบีย",
+        "flag": "🇳🇦"
+      },
+      "NR": {
+        "code": "NR",
+        "name_en": "Nauru",
+        "name_th": "นาอูรู",
+        "flag": "🇳🇷"
+      },
+      "NP": {
+        "code": "NP",
+        "name_en": "Nepal",
+        "name_th": "เนปาล",
+        "flag": "🇳🇵"
+      },
+      "NL": {
+        "code": "NL",
+        "name_en": "Netherlands",
+        "name_th": "เนเธอร์แลนด์",
+        "flag": "🇳🇱"
+      },
+      "NZ": {
+        "code": "NZ",
+        "name_en": "New Zealand",
+        "name_th": "นิวซีแลนด์",
+        "flag": "🇳🇿"
+      },
+      "NI": {
+        "code": "NI",
+        "name_en": "Nicaragua",
+        "name_th": "นิการากัว",
+        "flag": "🇳🇮"
+      },
+      "NE": {
+        "code": "NE",
+        "name_en": "Niger",
+        "name_th": "ไนเจอร์",
+        "flag": "🇳🇪"
+      },
+      "NG": {
+        "code": "NG",
+        "name_en": "Nigeria",
+        "name_th": "ไนจีเรีย",
+        "flag": "🇳🇬"
+      },
+      "KP": {
+        "code": "KP",
+        "name_en": "North Korea",
+        "name_th": "เกาหลีเหนือ",
+        "flag": "🇰🇵"
+      },
+      "MK": {
+        "code": "MK",
+        "name_en": "North Macedonia",
+        "name_th": "มาซิโดเนียเหนือ",
+        "flag": "🇲🇰"
+      },
+      "NO": {
+        "code": "NO",
+        "name_en": "Norway",
+        "name_th": "นอร์เวย์",
+        "flag": "🇳🇴"
+      },
+      "OM": {
+        "code": "OM",
+        "name_en": "Oman",
+        "name_th": "โอมาน",
+        "flag": "🇴🇲"
+      },
+      "PK": {
+        "code": "PK",
+        "name_en": "Pakistan",
+        "name_th": "ปากีสถาน",
+        "flag": "🇵🇰"
+      },
+      "PW": {
+        "code": "PW",
+        "name_en": "Palau",
+        "name_th": "ปาเลา",
+        "flag": "🇵🇼"
+      },
+      "PS": {
+        "code": "PS",
+        "name_en": "Palestine",
+        "name_th": "ปาเลสไตน์",
+        "flag": "🇵🇸"
+      },
+      "PA": {
+        "code": "PA",
+        "name_en": "Panama",
+        "name_th": "ปานามา",
+        "flag": "🇵🇦"
+      },
+      "PG": {
+        "code": "PG",
+        "name_en": "Papua New Guinea",
+        "name_th": "ปาปัวนิวกินี",
+        "flag": "🇵🇬"
+      },
+      "PY": {
+        "code": "PY",
+        "name_en": "Paraguay",
+        "name_th": "ปารากวัย",
+        "flag": "🇵🇾"
+      },
+      "PE": {
+        "code": "PE",
+        "name_en": "Peru",
+        "name_th": "เปรู",
+        "flag": "🇵🇪"
+      },
+      "PH": {
+        "code": "PH",
+        "name_en": "Philippines",
+        "name_th": "ฟิลิปปินส์",
+        "flag": "🇵🇭"
+      },
+      "PL": {
+        "code": "PL",
+        "name_en": "Poland",
+        "name_th": "โปแลนด์",
+        "flag": "🇵🇱"
+      },
+      "PT": {
+        "code": "PT",
+        "name_en": "Portugal",
+        "name_th": "โปรตุเกส",
+        "flag": "🇵🇹"
+      },
+      "QA": {
+        "code": "QA",
+        "name_en": "Qatar",
+        "name_th": "กาตาร์",
+        "flag": "🇶🇦"
+      },
+      "RO": {
+        "code": "RO",
+        "name_en": "Romania",
+        "name_th": "โรมาเนีย",
+        "flag": "🇷🇴"
+      },
+      "RU": {
+        "code": "RU",
+        "name_en": "Russia",
+        "name_th": "รัสเซีย",
+        "flag": "🇷🇺"
+      },
+      "RW": {
+        "code": "RW",
+        "name_en": "Rwanda",
+        "name_th": "รวันดา",
+        "flag": "🇷🇼"
+      },
+      "KN": {
+        "code": "KN",
+        "name_en": "Saint Kitts and Nevis",
+        "name_th": "เซนต์คิตส์และเนวิส",
+        "flag": "🇰🇳"
+      },
+      "LC": {
+        "code": "LC",
+        "name_en": "Saint Lucia",
+        "name_th": "เซนต์ลูเชีย",
+        "flag": "🇱🇨"
+      },
+      "VC": {
+        "code": "VC",
+        "name_en": "Saint Vincent",
+        "name_th": "เซนต์วินเซนต์และเกรนาดีนส์",
+        "flag": "🇻🇨"
+      },
+      "WS": {
+        "code": "WS",
+        "name_en": "Samoa",
+        "name_th": "ซามัว",
+        "flag": "🇼🇸"
+      },
+      "SM": {
+        "code": "SM",
+        "name_en": "San Marino",
+        "name_th": "ซานมารีโน",
+        "flag": "🇸🇲"
+      },
+      "ST": {
+        "code": "ST",
+        "name_en": "Sao Tome and Principe",
+        "name_th": "เซาตูเมและปรินซิปี",
+        "flag": "🇸🇹"
+      },
+      "SA": {
+        "code": "SA",
+        "name_en": "Saudi Arabia",
+        "name_th": "ซาอุดีอาระเบีย",
+        "flag": "🇸🇦"
+      },
+      "SN": {
+        "code": "SN",
+        "name_en": "Senegal",
+        "name_th": "เซเนกัล",
+        "flag": "🇸🇳"
+      },
+      "RS": {
+        "code": "RS",
+        "name_en": "Serbia",
+        "name_th": "เซอร์เบีย",
+        "flag": "🇷🇸"
+      },
+      "SC": {
+        "code": "SC",
+        "name_en": "Seychelles",
+        "name_th": "เซเชลส์",
+        "flag": "🇸🇨"
+      },
+      "SL": {
+        "code": "SL",
+        "name_en": "Sierra Leone",
+        "name_th": "เซียร์ราลีโอน",
+        "flag": "🇸🇱"
+      },
+      "SG": {
+        "code": "SG",
+        "name_en": "Singapore",
+        "name_th": "สิงคโปร์",
+        "flag": "🇸🇬"
+      },
+      "SK": {
+        "code": "SK",
+        "name_en": "Slovakia",
+        "name_th": "สโลวาเกีย",
+        "flag": "🇸🇰"
+      },
+      "SI": {
+        "code": "SI",
+        "name_en": "Slovenia",
+        "name_th": "สโลวีเนีย",
+        "flag": "🇸🇮"
+      },
+      "SB": {
+        "code": "SB",
+        "name_en": "Solomon Islands",
+        "name_th": "หมู่เกาะโซโลมอน",
+        "flag": "🇸🇧"
+      },
+      "SO": {
+        "code": "SO",
+        "name_en": "Somalia",
+        "name_th": "โซมาเลีย",
+        "flag": "🇸🇴"
+      },
+      "ZA": {
+        "code": "ZA",
+        "name_en": "South Africa",
+        "name_th": "แอฟริกาใต้",
+        "flag": "🇿🇦"
+      },
+      "KR": {
+        "code": "KR",
+        "name_en": "South Korea",
+        "name_th": "เกาหลีใต้",
+        "flag": "🇰🇷"
+      },
+      "SS": {
+        "code": "SS",
+        "name_en": "South Sudan",
+        "name_th": "ซูดานใต้",
+        "flag": "🇸🇸"
+      },
+      "ES": {
+        "code": "ES",
+        "name_en": "Spain",
+        "name_th": "สเปน",
+        "flag": "🇪🇸"
+      },
+      "LK": {
+        "code": "LK",
+        "name_en": "Sri Lanka",
+        "name_th": "ศรีลังกา",
+        "flag": "🇱🇰"
+      },
+      "SD": {
+        "code": "SD",
+        "name_en": "Sudan",
+        "name_th": "ซูดาน",
+        "flag": "🇸🇩"
+      },
+      "SR": {
+        "code": "SR",
+        "name_en": "Suriname",
+        "name_th": "ซูรินาม",
+        "flag": "🇸🇷"
+      },
+      "SE": {
+        "code": "SE",
+        "name_en": "Sweden",
+        "name_th": "สวีเดน",
+        "flag": "🇸🇪"
+      },
+      "CH": {
+        "code": "CH",
+        "name_en": "Switzerland",
+        "name_th": "สวิตเซอร์แลนด์",
+        "flag": "🇨🇭"
+      },
+      "SY": {
+        "code": "SY",
+        "name_en": "Syria",
+        "name_th": "ซีเรีย",
+        "flag": "🇸🇾"
+      },
+      "TW": {
+        "code": "TW",
+        "name_en": "Taiwan",
+        "name_th": "ไต้หวัน",
+        "flag": "🇹🇼"
+      },
+      "TJ": {
+        "code": "TJ",
+        "name_en": "Tajikistan",
+        "name_th": "ทาจิกิสถาน",
+        "flag": "🇹🇯"
+      },
+      "TZ": {
+        "code": "TZ",
+        "name_en": "Tanzania",
+        "name_th": "แทนซาเนีย",
+        "flag": "🇹🇿"
+      },
+      "TH": {
+        "code": "TH",
+        "name_en": "Thailand",
+        "name_th": "ไทย",
+        "flag": "🇹🇭"
+      },
+      "TL": {
+        "code": "TL",
+        "name_en": "Timor-Leste",
+        "name_th": "ติมอร์-เลสเต",
+        "flag": "🇹🇱"
+      },
+      "TG": {
+        "code": "TG",
+        "name_en": "Togo",
+        "name_th": "โตโก",
+        "flag": "🇹🇬"
+      },
+      "TO": {
+        "code": "TO",
+        "name_en": "Tonga",
+        "name_th": "ตองกา",
+        "flag": "🇹🇴"
+      },
+      "TT": {
+        "code": "TT",
+        "name_en": "Trinidad and Tobago",
+        "name_th": "ตรินิแดดและโตเบโก",
+        "flag": "🇹🇹"
+      },
+      "TN": {
+        "code": "TN",
+        "name_en": "Tunisia",
+        "name_th": "ตูนิเซีย",
+        "flag": "🇹🇳"
+      },
+      "TR": {
+        "code": "TR",
+        "name_en": "Turkey",
+        "name_th": "ตุรกี",
+        "flag": "🇹🇷"
+      },
+      "TM": {
+        "code": "TM",
+        "name_en": "Turkmenistan",
+        "name_th": "เติร์กเมนิสถาน",
+        "flag": "🇹🇲"
+      },
+      "TV": {
+        "code": "TV",
+        "name_en": "Tuvalu",
+        "name_th": "ตูวาลู",
+        "flag": "🇹🇻"
+      },
+      "UG": {
+        "code": "UG",
+        "name_en": "Uganda",
+        "name_th": "ยูกันดา",
+        "flag": "🇺🇬"
+      },
+      "UA": {
+        "code": "UA",
+        "name_en": "Ukraine",
+        "name_th": "ยูเครน",
+        "flag": "🇺🇦"
+      },
+      "AE": {
+        "code": "AE",
+        "name_en": "United Arab Emirates",
+        "name_th": "สหรัฐอาหรับเอมิเรตส์",
+        "flag": "🇦🇪"
+      },
+      "GB": {
+        "code": "GB",
+        "name_en": "United Kingdom",
+        "name_th": "สหราชอาณาจักร",
+        "flag": "🇬🇧"
+      },
+      "US": {
+        "code": "US",
+        "name_en": "United States",
+        "name_th": "สหรัฐอเมริกา",
+        "flag": "🇺🇸"
+      },
+      "UY": {
+        "code": "UY",
+        "name_en": "Uruguay",
+        "name_th": "อุรุกวัย",
+        "flag": "🇺🇾"
+      },
+      "UZ": {
+        "code": "UZ",
+        "name_en": "Uzbekistan",
+        "name_th": "อุซเบกิสถาน",
+        "flag": "🇺🇿"
+      },
+      "VU": {
+        "code": "VU",
+        "name_en": "Vanuatu",
+        "name_th": "วานูอาตู",
+        "flag": "🇻🇺"
+      },
+      "VA": {
+        "code": "VA",
+        "name_en": "Vatican City",
+        "name_th": "นครรัฐวาติกัน",
+        "flag": "🇻🇦"
+      },
+      "VE": {
+        "code": "VE",
+        "name_en": "Venezuela",
+        "name_th": "เวเนซุเอลา",
+        "flag": "🇻🇪"
+      },
+      "VN": {
+        "code": "VN",
+        "name_en": "Vietnam",
+        "name_th": "เวียดนาม",
+        "flag": "🇻🇳"
+      },
+      "YE": {
+        "code": "YE",
+        "name_en": "Yemen",
+        "name_th": "เยเมน",
+        "flag": "🇾🇪"
+      },
+      "ZM": {
+        "code": "ZM",
+        "name_en": "Zambia",
+        "name_th": "แซมเบีย",
+        "flag": "🇿🇲"
+      },
+      "ZW": {
+        "code": "ZW",
+        "name_en": "Zimbabwe",
+        "name_th": "ซิมบับเว",
+        "flag": "🇿🇼"
+      }
+    },
+    "visa_guides": {
+      "TH_JP_th": {
+        "from_country": "TH",
+        "to_country": "JP",
+        "lang": "th",
+        "visa_type": "visa_free",
+        "stay_duration": "สูงสุด 15 วัน",
+        "processing_time": "ไม่จำเป็น (เนื่องจากได้รับการยกเว้นวีซ่า)",
+        "estimated_cost": "ฟรี",
+        "official_portal_url": "https://www.mofa.go.jp/j_info/visit/visa/short/novisa.html",
+        "summary": "ผู้ถือหนังสือเดินทางไทยสามารถเดินทางเข้าประเทศญี่ปุ่นเพื่อวัตถุประสงค์ด้านการท่องเที่ยวหรือธุรกิจระยะสั้นได้โดยไม่ต้องขอวีซ่าเป็นระยะเวลาสูงสุด 15 วัน การพำนักต้องไม่เกินระยะเวลาที่กำหนดและต้องมีวัตถุประสงค์ที่ไม่ใช่การทำงานหรือการพำนักระยะยาว",
+        "required_documents": [
+          "หนังสือเดินทางที่มีอายุเหลือไม่น้อยกว่า 6 เดือน",
+          "ตั๋วเครื่องบินไป-กลับ หรือตั๋วเครื่องบินเดินทางต่อไปยังประเทศที่สาม",
+          "หลักฐานการจองที่พัก",
+          "หลักฐานทางการเงินที่เพียงพอสำหรับการพำนักในญี่ปุ่น",
+          "แผนการเดินทางโดยประมาณ"
+        ],
+        "steps": [
+          {
+            "step_number": 1,
+            "title": "เตรียมเอกสารที่จำเป็น",
+            "description": "ตรวจสอบให้แน่ใจว่าหนังสือเดินทางมีอายุเหลือเพียงพอ และเตรียมตั๋วเครื่องบินไป-กลับ หลักฐานการจองที่พัก และหลักฐานทางการเงินที่เพียงพอสำหรับการพำนัก"
+          },
+          {
+            "step_number": 2,
+            "title": "เดินทางเข้าประเทศญี่ปุ่น",
+            "description": "เมื่อเดินทางถึงญี่ปุ่น ให้แสดงเอกสารที่จำเป็นต่อเจ้าหน้าที่ตรวจคนเข้าเมือง และแจ้งวัตถุประสงค์ของการเดินทางว่าเป็นเพื่อการท่องเที่ยวหรือธุรกิจระยะสั้น"
+          },
+          {
+            "step_number": 3,
+            "title": "ปฏิบัติตามเงื่อนไขการพำนัก",
+            "description": "พำนักในญี่ปุ่นไม่เกิน 15 วัน และปฏิบัติตามกฎหมายและข้อบังคับของญี่ปุ่นอย่างเคร่งครัดตลอดระยะเวลาที่พำนัก"
+          }
+        ],
+        "updated_at": "2026-09-03T10:30:52.649838"
+      },
+      "TH_US_en": {
+        "from_country": "TH",
+        "to_country": "US",
+        "lang": "en",
+        "visa_type": "embassy_visa",
+        "stay_duration": "Up to 6 months per entry (determined by CBP officer)",
+        "processing_time": "Several weeks to months for appointment scheduling; 3-5 business days post-interview for processing",
+        "estimated_cost": "USD 185",
+        "official_portal_url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visitor.html",
+        "summary": "Citizens of Thailand require a B1/B2 non-immigrant visa for short-term tourism or business travel to the United States. This involves completing an online application (DS-160), paying a fee, and attending an in-person interview at the U.S. Embassy in Bangkok. The visa allows for multiple entries, with the exact duration of stay determined by a Customs and Border Protection (CBP) officer upon arrival in the U.S.",
+        "required_documents": [
+          "Valid passport (valid for at least six months beyond your period of stay in the U.S.)",
+          "Nonimmigrant Visa Application (DS-160) confirmation page",
+          "Visa interview appointment confirmation page",
+          "One 2x2 inch (5x5 cm) color photograph (taken within the last six months, meeting U.S. visa photo requirements)",
+          "Proof of funds to cover your expenses during your stay (e.g., bank statements)",
+          "Proof of strong ties to Thailand (e.g., employment letter, property deeds, family registration, business registration)",
+          "Travel itinerary (optional, but recommended)",
+          "Previous passports containing any prior U.S. visas (if applicable)"
+        ],
+        "steps": [
+          {
+            "step_number": 1,
+            "title": "Complete the DS-160 Form",
+            "description": "Fill out the online Nonimmigrant Visa Application (DS-160) form accurately and completely on the U.S. Department of State's Consular Electronic Application Center website."
+          },
+          {
+            "step_number": 2,
+            "title": "Pay the Visa Fee",
+            "description": "Pay the non-refundable visa application fee (MRV fee) through the designated payment methods provided on the U.S. Embassy's visa service website for Thailand."
+          },
+          {
+            "step_number": 3,
+            "title": "Schedule an Interview",
+            "description": "Create an account on the U.S. Embassy's visa service website and schedule your visa interview appointment at the U.S. Embassy in Bangkok. Be aware that wait times for appointments can be significant."
+          },
+          {
+            "step_number": 4,
+            "title": "Attend the Interview",
+            "description": "Attend your scheduled interview at the U.S. Embassy in Bangkok, bringing all required documents. A consular officer will review your application and conduct a brief interview to determine your eligibility."
+          },
+          {
+            "step_number": 5,
+            "title": "Receive Your Passport",
+            "description": "If your visa is approved, your passport with the visa will be delivered to your chosen address or pick-up location within a few business days after the interview."
+          }
+        ],
+        "updated_at": "2026-09-03T10:22:39.185552"
+      }
+    }
+  }
+}
