@@ -238,9 +238,9 @@ export default function Home() {
             </a>
           </p>
 
-          <div className="pt-2 border-t border-[#BADFDB]/40 flex items-center justify-center gap-2 text-[11px] text-[#7D8D9C] max-w-2xl mx-auto">
-            <Info className="size-3.5 text-[#1D6B63] shrink-0" />
-            <p className="leading-relaxed">
+          <div className="pt-2 border-t border-[#BADFDB]/40 flex items-start justify-center gap-2 text-[11px] text-[#7D8D9C] max-w-2xl mx-auto text-left">
+            <Info className="size-3.5 text-[#1D6B63] shrink-0 mt-0.5" />
+            <p className="leading-relaxed text-left">
               {t.proofNotice}
             </p>
           </div>
