@@ -3,7 +3,7 @@
 import React, { useMemo } from 'react';
 import { CountryFlag } from './CountryFlag';
 import { Language, i18n } from '@/lib/i18n';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Compass, Sparkles } from 'lucide-react';
 import { getQuickBaseline } from '@/lib/api';
 import { Country } from '@/types/visa';
 import { WorldCitySkyline } from './WorldCitySkyline';
@@ -134,13 +134,25 @@ export function DestinationGallery({ onSelect, fromCountry, countries, lang }: D
     <div className="w-full mt-10 mb-14">
       {/* Section Header with Animated World City Skyline */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 mb-4 px-1">
-        <div>
-          <span className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#1D6B63]">
-            {lang === 'th' ? 'จุดหมายปลายทางยอดนิยม' : 'POPULAR DESTINATIONS'}
-          </span>
-          <h2 className="font-display text-xl sm:text-2xl font-black text-[#1A232B] tracking-tight mt-0.5">
-            {t.popularSectionTitle}
-          </h2>
+        <div className="flex items-center gap-3">
+          <div className="relative flex items-center justify-center size-9 rounded-2xl bg-gradient-to-br from-[#BADFDB]/40 to-[#FFBDBD]/30 text-[#1D6B63] border border-[#BADFDB] shadow-2xs">
+            <Compass className="size-4.5 text-[#1D6B63] animate-[spin_24s_linear_infinite]" />
+            <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FFA4A4] opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#FFA4A4]" />
+            </span>
+          </div>
+          <div>
+            <div className="flex items-center gap-2">
+              <h2 className="font-display text-2xl sm:text-3xl font-black text-[#1D6B63] tracking-tight leading-none">
+                {t.popularSectionTitle}
+              </h2>
+              <span className="hidden sm:inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-[#BADFDB]/30 text-[#1D6B63] border border-[#BADFDB]/60 shadow-2xs backdrop-blur-xs animate-pulse">
+                <Sparkles className="size-2.5 text-[#1D6B63]" />
+                <span>CURATED</span>
+              </span>
+            </div>
+          </div>
         </div>
 
         {/* Animated City Skyline Popup with Multi-Country Architecture, Trees & Sky */}
