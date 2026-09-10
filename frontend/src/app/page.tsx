@@ -13,7 +13,7 @@ import { BottomTabBar } from '@/components/BottomTabBar';
 import { Language, i18n } from '@/lib/i18n';
 import { Country, VisaGuideResponse } from '@/types/visa';
 import { getCountries, fetchVisaGuide } from '@/lib/api';
-import { Compass, ClipboardList, Milestone, ShieldCheck, Shield, ExternalLink } from 'lucide-react';
+import { Compass, ClipboardList, Milestone, ShieldCheck, Shield, ExternalLink, Info } from 'lucide-react';
 
 export default function Home() {
   const [lang, setLang] = useState<Language>('th');
@@ -221,13 +221,11 @@ export default function Home() {
           </div>
         )}
 
-        {/* Proof over promise banner with Dataset link */}
-        <div className="w-full mt-12 p-4.5 rounded-2xl bg-white/80 border border-[#BADFDB] text-center text-xs text-[#4A5866] shadow-2xs">
+        {/* Proof over promise banner with Dataset link & Official Verification Notice */}
+        <div className="w-full mt-12 p-5 rounded-2xl bg-white/85 border border-[#BADFDB] text-center text-xs text-[#4A5866] shadow-2xs space-y-2.5">
           <p className="leading-relaxed font-medium inline-flex flex-wrap items-center justify-center gap-1.5">
             <span>
-              {lang === 'th'
-                ? 'ข้อมูลถูกต้องตามระเบียบกงสุลสากล ตรวจสอบจากฐานข้อมูล Passport Index'
-                : 'Verified across 39,601 diplomatic pairs against consular regulations and the'}
+              {t.proofBanner}
             </span>
             <a
               href="https://github.com/ilyankou/passport-index-dataset"
@@ -239,6 +237,13 @@ export default function Home() {
               <ExternalLink className="size-3 text-[#1D6B63] shrink-0" />
             </a>
           </p>
+
+          <div className="pt-2 border-t border-[#BADFDB]/40 flex items-center justify-center gap-2 text-[11px] text-[#7D8D9C] max-w-2xl mx-auto">
+            <Info className="size-3.5 text-[#1D6B63] shrink-0" />
+            <p className="leading-relaxed">
+              {t.proofNotice}
+            </p>
+          </div>
         </div>
       </main>
 

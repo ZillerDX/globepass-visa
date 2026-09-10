@@ -62,7 +62,8 @@ export const i18n = {
     clearSelection: "ล้างการเลือก",
     backendConnected: "ระบบกงสุลออนไลน์",
     backendOffline: "โหมดสแตนด์อโลน",
-    proofBanner: "ข้อมูลถูกต้องตามระเบียบกงสุลสากล ตรวจสอบจากฐานข้อมูล Passport Index"
+    proofBanner: "ข้อมูลถูกต้องตามระเบียบกงสุลสากล ตรวจสอบจากฐานข้อมูล Passport Index",
+    proofNotice: "ข้อมูลอาจไม่อัปเดตตามปัจจุบัน โปรดตรวจสอบข้อมูลจากเว็บไซต์ทางการของประเทศที่จะไปด้วย เมื่อใช้งานฟังก์ชัน AI ตรวจสอบข้อกำหนด ระบบจะแสดงลิงก์เว็บไซต์กงสุลทางการของประเทศนั้นๆ"
   },
   en: {
     appTitle: "GlobePass",
@@ -125,6 +126,7 @@ export const i18n = {
     clearSelection: "Clear selection",
     backendConnected: "Consular Engine Online",
     backendOffline: "Standalone Offline Mode",
-    proofBanner: "Verified across 39,601 country pairs against international consular regulations."
+    proofBanner: "Verified across 39,601 country pairs against international consular regulations and the",
+    proofNotice: "Information may not reflect real-time updates. Please verify official requirements with the destination country. Running the AI verification will display the official consular website link for that country."
   }
 };
