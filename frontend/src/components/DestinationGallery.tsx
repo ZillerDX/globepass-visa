@@ -6,6 +6,7 @@ import { Language, i18n } from '@/lib/i18n';
 import { ArrowRight } from 'lucide-react';
 import { getQuickBaseline } from '@/lib/api';
 import { Country } from '@/types/visa';
+import { WorldCitySkyline } from './WorldCitySkyline';
 
 interface DestinationCard {
   code: string;
@@ -131,8 +132,8 @@ export function DestinationGallery({ onSelect, fromCountry, countries, lang }: D
 
   return (
     <div className="w-full mt-10 mb-14">
-      {/* Section Header Triple */}
-      <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-4 px-1">
+      {/* Section Header with Animated World City Skyline */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 mb-4 px-1">
         <div>
           <span className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#1D6B63]">
             {lang === 'th' ? 'จุดหมายปลายทางยอดนิยม' : 'POPULAR DESTINATIONS'}
@@ -141,9 +142,11 @@ export function DestinationGallery({ onSelect, fromCountry, countries, lang }: D
             {t.popularSectionTitle}
           </h2>
         </div>
-        <p className="text-xs text-[#4A5866] max-w-sm font-medium">
-          {t.popularSectionSubtitle}
-        </p>
+
+        {/* Animated City Skyline Popup with Multi-Country Architecture, Trees & Sky */}
+        <div className="w-full md:w-auto flex justify-start md:justify-end">
+          <WorldCitySkyline lang={lang} />
+        </div>
       </div>
 
       {/* Horizontal Rail: Generous padding (pt-3 pb-8 px-2) prevents clipping */}
