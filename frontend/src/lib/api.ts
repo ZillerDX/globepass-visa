@@ -2,7 +2,7 @@ import { Country, VisaGuideResponse, QuickVisaInfo } from '@/types/visa';
 import rawCountries from './data/countries.json';
 import rawPopularMatrix from './data/popular_matrix.json';
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || '';
 const GEMINI_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY || '';
 
 export const countriesList: Country[] = rawCountries as Country[];
@@ -46,7 +46,10 @@ export async function fetchQuickBaseline(fromCode: string, toCode: string): Prom
   try {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 3000);
-    const res = await fetch(`${BACKEND_URL}/api/visa/quick?from_country=${fromCode}&to_country=${toCode}`, {
+    const targetUrl = BACKEND_URL
+      ? `${BACKEND_URL}/api/visa/quick?from_country=${fromCode}&to_country=${toCode}`
+      : `/api/visa/quick?from_country=${fromCode}&to_country=${toCode}`;
+    const res = await fetch(targetUrl, {
       signal: controller.signal
     });
     clearTimeout(timeoutId);
@@ -66,12 +69,13 @@ export async function fetchVisaGuide(
   lang: 'th' | 'en' = 'th',
   forceRefresh: boolean = false
 ): Promise<{ data: VisaGuideResponse; source: 'backend' | 'client_ai' | 'offline_baseline' }> {
-  // 1. Try FastAPI Backend with 8s timeout
+  // 1. Try Serverless Route Handler or Backend with 9s timeout
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 8000);
+    const timeoutId = setTimeout(() => controller.abort(), 9000);
+    const targetUrl = BACKEND_URL ? `${BACKEND_URL}/api/visa/ai-guide` : '/api/visa/ai-guide';
 
-    const res = await fetch(`${BACKEND_URL}/api/visa/ai-guide`, {
+    const res = await fetch(targetUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
