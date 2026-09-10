@@ -26,7 +26,7 @@ export function Navbar({ lang, onLanguageChange, backendOnline }: NavbarProps) {
                 GlobePass
               </span>
               <span className="px-2 py-0.5 text-[9px] font-bold tracking-[0.16em] uppercase rounded-full bg-[#BADFDB]/50 text-[#1D6B63] border border-[#BADFDB]">
-                TRAVEL AI
+                CONSULAR INTEL
               </span>
             </div>
             <p className="text-[11px] text-[#4A5866] hidden sm:block leading-tight mt-0.5 font-medium">

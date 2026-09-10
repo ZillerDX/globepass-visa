@@ -13,7 +13,7 @@ import { BottomTabBar } from '@/components/BottomTabBar';
 import { Language, i18n } from '@/lib/i18n';
 import { Country, VisaGuideResponse } from '@/types/visa';
 import { getCountries, fetchVisaGuide } from '@/lib/api';
-import { Compass, ClipboardList, Milestone, ShieldCheck, Shield } from 'lucide-react';
+import { Compass, ClipboardList, Milestone, ShieldCheck, Shield, ExternalLink } from 'lucide-react';
 
 export default function Home() {
   const [lang, setLang] = useState<Language>('th');
@@ -221,10 +221,23 @@ export default function Home() {
           </div>
         )}
 
-        {/* Proof over promise banner */}
+        {/* Proof over promise banner with Dataset link */}
         <div className="w-full mt-12 p-4.5 rounded-2xl bg-white/80 border border-[#BADFDB] text-center text-xs text-[#4A5866] shadow-2xs">
-          <p className="leading-relaxed font-medium">
-            {t.proofBanner}
+          <p className="leading-relaxed font-medium inline-flex flex-wrap items-center justify-center gap-1.5">
+            <span>
+              {lang === 'th'
+                ? 'ข้อมูลถูกต้องตามระเบียบกงสุลสากล ตรวจสอบจากฐานข้อมูล Passport Index'
+                : 'Verified across 39,601 diplomatic pairs against consular regulations and the'}
+            </span>
+            <a
+              href="https://github.com/ilyankou/passport-index-dataset"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 font-bold text-[#1D6B63] underline underline-offset-4 decoration-[#BADFDB] hover:text-[#FFA4A4] transition-colors"
+            >
+              <span>{lang === 'th' ? 'ชุดข้อมูลสถิติ Dataset' : 'Passport Index Dataset'}</span>
+              <ExternalLink className="size-3 text-[#1D6B63] shrink-0" />
+            </a>
           </p>
         </div>
       </main>
@@ -240,7 +253,7 @@ export default function Home() {
         lang={lang}
       />
 
-      {/* Footer: Symmetrical max-w-5xl container with Power By Ai */}
+      {/* Footer: Symmetrical max-w-5xl container without AI jargon */}
       <footer className="border-t border-[#BADFDB]/70 bg-white/70 py-8 px-4 sm:px-6 text-center text-xs text-[#7D8D9C]">
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2 font-bold text-[#1A232B]">
@@ -249,8 +262,8 @@ export default function Home() {
           </div>
           <p className="text-[11px] text-[#4A5866]">
             {lang === 'th'
-              ? 'มาตรฐานสากล ISO 3166-1 alpha-2 | Power By Ai และฐานข้อมูล Passport Index'
-              : 'Compliant with ISO 3166-1 alpha-2 standard. Power By Ai and Passport Index dataset.'}
+              ? 'มาตรฐานสากล ISO 3166-1 alpha-2 | อ้างอิงฐานข้อมูลสากล Passport Index Dataset'
+              : 'Compliant with ISO 3166-1 alpha-2 standard | Passport Index Global Dataset'}
           </p>
         </div>
       </footer>

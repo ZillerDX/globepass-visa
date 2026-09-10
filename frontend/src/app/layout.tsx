@@ -16,9 +16,13 @@ const prompt = Prompt({
 
 export const metadata: Metadata = {
   title: "GlobePass: Global Visa & Travel Intelligence",
-  description: "Worldwide visa entry requirements, automated consular document checklists, and step-by-step application roadmaps powered by AI.",
+  description: "Worldwide visa entry requirements, automated consular document checklists, and step-by-step application roadmaps.",
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
   },
 };
 

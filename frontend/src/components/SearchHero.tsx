@@ -14,6 +14,7 @@ import {
 import { Country } from '@/types/visa';
 import { Language, i18n } from '@/lib/i18n';
 import { CountryFlag } from './CountryFlag';
+import { HeroTravelAnimation } from './HeroTravelAnimation';
 
 interface SearchHeroProps {
   countries: Country[];
@@ -209,21 +210,23 @@ export function SearchHero({
   ];
 
   return (
-    <section className="relative pt-6 pb-2 w-full">
-      {/* Editorial Section Header: Centered */}
-      <div className="text-center mb-8 max-w-3xl mx-auto">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[10px] font-bold tracking-[0.24em] uppercase bg-[#BADFDB]/35 text-[#1D6B63] border border-[#BADFDB] mb-3 shadow-2xs">
-          <Compass className="size-3.5 text-[#1D6B63] shrink-0" />
-          <span>GLOBAL VISA AND TRAVEL INTELLIGENCE</span>
-        </div>
+    <section className="relative pt-4 pb-2 w-full">
+      {/* 3D Animated Hero Scene (Orbiting Airplane, Floating Clouds & 3D Globe) */}
+      <HeroTravelAnimation>
+        <div className="text-center mb-6 max-w-3xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[10px] font-bold tracking-[0.24em] uppercase bg-[#BADFDB]/35 text-[#1D6B63] border border-[#BADFDB] mb-3 shadow-2xs backdrop-blur-xs">
+            <Compass className="size-3.5 text-[#1D6B63] shrink-0" />
+            <span>GLOBAL VISA AND TRAVEL INTELLIGENCE</span>
+          </div>
 
-        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-black text-[#1A232B] tracking-tight leading-[1.2]">
-          {t.appSubtitle}
-        </h1>
-        <p className="mt-3 text-sm sm:text-base text-[#4A5866] max-w-2xl mx-auto leading-relaxed font-normal">
-          {t.tagline}
-        </p>
-      </div>
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-black text-[#1A232B] tracking-tight leading-[1.2]">
+            {t.appSubtitle}
+          </h1>
+          <p className="mt-3 text-sm sm:text-base text-[#4A5866] max-w-2xl mx-auto leading-relaxed font-normal">
+            {t.tagline}
+          </p>
+        </div>
+      </HeroTravelAnimation>
 
       {/* Consular Boarding Terminal Card: Continuous 2.5px gradient frame wrapping all 4 edges */}
       <div className="relative w-full rounded-[28px] p-[2.5px] bg-gradient-to-r from-[#BADFDB] via-[#FFA4A4] via-[#FFBDBD] to-[#BADFDB] shadow-xl shadow-[#FFA4A4]/15 transition-all">

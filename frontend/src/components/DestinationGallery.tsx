@@ -129,14 +129,6 @@ export function DestinationGallery({ onSelect, fromCountry, countries, lang }: D
     return lang === 'th' ? originCountry.name_th : originCountry.name_en;
   }, [originCountry, lang]);
 
-  // Section title dynamically bound to Origin Country
-  const dynamicSectionTitle = useMemo(() => {
-    if (lang === 'th') {
-      return `จุดหมายปลายทางยอดนิยมสำหรับผู้ถือพาสปอร์ต${originName}`;
-    }
-    return `Popular Destinations for ${originName} Passport Holders`;
-  }, [lang, originName]);
-
   return (
     <div className="w-full mt-10 mb-14">
       {/* Section Header Triple */}
@@ -146,7 +138,7 @@ export function DestinationGallery({ onSelect, fromCountry, countries, lang }: D
             {lang === 'th' ? 'จุดหมายปลายทางยอดนิยม' : 'POPULAR DESTINATIONS'}
           </span>
           <h2 className="font-display text-xl sm:text-2xl font-black text-[#1A232B] tracking-tight mt-0.5">
-            {dynamicSectionTitle}
+            {t.popularSectionTitle}
           </h2>
         </div>
         <p className="text-xs text-[#4A5866] max-w-sm font-medium">
@@ -199,7 +191,7 @@ export function DestinationGallery({ onSelect, fromCountry, countries, lang }: D
                 <div className="p-4 bg-white flex items-center justify-between gap-3 border-t border-[rgba(26,35,43,0.06)]">
                   <div className="text-xs min-w-0 flex-1">
                     <span className="text-[10px] font-bold uppercase tracking-wider text-[#7D8D9C] block leading-tight truncate">
-                      {lang === 'th' ? `ข้อกำหนดพาสปอร์ต${originName}` : `${originName} ENTRY POLICY`}
+                      {lang === 'th' ? 'ข้อกำหนดการเดินทาง' : 'ENTRY REQUIREMENTS'}
                     </span>
                     <span className="font-bold text-[#1A232B] text-xs leading-normal block mt-0.5 truncate">
                       {policyText}

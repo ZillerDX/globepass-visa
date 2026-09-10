@@ -1,0 +1,15 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="gp-icon-grad" x1="12" y1="12" x2="52" y2="52" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#BADFDB" />
+      <stop offset="50%" stopColor="#FFBDBD" />
+      <stop offset="100%" stopColor="#FFA4A4" />
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="#FCF9EA" stroke="#BADFDB" stroke-width="2" />
+  <circle cx="32" cy="32" r="24" stroke="#BADFDB" stroke-width="2" stroke-dasharray="3 3" opacity="0.9" />
+  <polygon points="32,8 37,27 56,32 37,37 32,56 27,37 8,32 27,27" fill="url(#gp-icon-grad)" stroke="#FFA4A4" stroke-width="1.5" stroke-linejoin="round" />
+  <path d="M32 14L48 32L32 50L37 32L32 14Z" fill="#FFA4A4" fill-opacity="0.88" />
+  <circle cx="32" cy="32" r="3.5" fill="#1A232B" />
+  <circle cx="32" cy="32" r="1.5" fill="#FCF9EA" />
+</svg>

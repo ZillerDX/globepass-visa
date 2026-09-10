@@ -24,7 +24,7 @@ export const i18n = {
 
     // Result sections
     resultTitle: "ผลการวิเคราะห์ข้อกำหนดวีซ่าอย่างเป็นทางการ",
-    liveAiBadge: "ประมวลผลสดผ่าน Power By Ai",
+    liveAiBadge: "ประมวลผลแบบเรียลไทม์",
     cachedBadge: "บันทึกในฐานข้อมูลกงสุล",
     stayDurationLabel: "ระยะเวลาพำนักที่อนุญาต",
     processingTimeLabel: "ระยะเวลาพิจารณาคำร้อง",
@@ -56,13 +56,13 @@ export const i18n = {
     no_admission: "ไม่อนุญาตให้เดินทางเข้าประเทศ",
     
     // Proof and Popular
-    popularSectionTitle: "จุดหมายปลายทางยอดนิยมสำหรับผู้ถือพาสปอร์ต",
-    popularSectionSubtitle: "แตะเลือกเพื่อตรวจสอบข้อกำหนดและขั้นตอนทันที",
+    popularSectionTitle: "จุดหมายปลายทางยอดนิยม",
+    popularSectionSubtitle: "ประเทศต่างๆ ในนี้ถูกลิสต์มาแล้วว่ายอดนิยม แตะเลือกเพื่อตรวจสอบข้อกำหนดและขั้นตอนทันที",
     popularDestinations: "ปลายทางยอดนิยม:",
     clearSelection: "ล้างการเลือก",
     backendConnected: "ระบบกงสุลออนไลน์",
     backendOffline: "โหมดสแตนด์อโลน",
-    proofBanner: "ข้อมูลถูกต้องตามระเบียบกงสุลสากล ตรวจสอบจากฐานข้อมูล Passport Index และ Power By Ai"
+    proofBanner: "ข้อมูลถูกต้องตามระเบียบกงสุลสากล ตรวจสอบจากฐานข้อมูล Passport Index"
   },
   en: {
     appTitle: "GlobePass",
@@ -87,7 +87,7 @@ export const i18n = {
 
     // Result sections
     resultTitle: "Consular Visa Policy Assessment",
-    liveAiBadge: "Live Power By Ai Analysis",
+    liveAiBadge: "Live Consular Intelligence",
     cachedBadge: "Verified Database Record",
     stayDurationLabel: "Permitted Stay Duration",
     processingTimeLabel: "Standard Processing Time",
@@ -119,8 +119,8 @@ export const i18n = {
     no_admission: "No Entry Permitted",
     
     // Proof and Popular
-    popularSectionTitle: "Popular Global Routes & Consular Protocols",
-    popularSectionSubtitle: "Select any destination below for instant entry requirements",
+    popularSectionTitle: "Popular Destinations",
+    popularSectionSubtitle: "Curated popular destinations. Tap any country to inspect official entry requirements.",
     popularDestinations: "Popular routes:",
     clearSelection: "Clear selection",
     backendConnected: "Consular Engine Online",
