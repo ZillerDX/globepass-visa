@@ -3,7 +3,6 @@ import rawCountries from './data/countries.json';
 import rawPopularMatrix from './data/popular_matrix.json';
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || '';
-const GEMINI_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY || '';
 
 export const countriesList: Country[] = rawCountries as Country[];
 const popularMatrix = rawPopularMatrix as Record<string, any>;
@@ -68,7 +67,7 @@ export async function fetchVisaGuide(
   toCode: string,
   lang: 'th' | 'en' = 'th',
   forceRefresh: boolean = false
-): Promise<{ data: VisaGuideResponse; source: 'backend' | 'client_ai' | 'offline_baseline' }> {
+): Promise<{ data: VisaGuideResponse; source: 'backend' | 'offline_baseline' }> {
   // 1. Try Serverless Route Handler or Backend with 9s timeout
   try {
     const controller = new AbortController();
@@ -97,63 +96,7 @@ export async function fetchVisaGuide(
     console.warn('[API Client] Backend not reachable, checking client fallback:', err);
   }
 
-  // 2. Direct Gemini synthesis (if client key is provided via env)
-  if (GEMINI_KEY) {
-    try {
-      const baseline = getQuickBaseline(fromCode, toCode);
-      const fromCountry = countriesList.find(c => c.code === fromCode.toUpperCase());
-      const toCountry = countriesList.find(c => c.code === toCode.toUpperCase());
-
-      const prompt = `Analyze visa requirement from ${fromCountry?.name_en || fromCode} to ${toCountry?.name_en || toCode}. Baseline status: ${baseline.label}. Language: ${lang === 'th' ? 'Thai' : 'English'}. Return JSON with: visa_type (visa_free|visa_on_arrival|evisa|embassy_visa), stay_duration, processing_time, estimated_cost, official_portal_url, summary, required_documents (list of str), steps (list of {step_number, title, description}).`;
-
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 12000);
-
-      const geminiRes = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_KEY}`,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            contents: [{ parts: [{ text: prompt }] }],
-            generationConfig: { responseMimeType: 'application/json' }
-          }),
-          signal: controller.signal
-        }
-      );
-
-      clearTimeout(timeoutId);
-
-      if (geminiRes.ok) {
-        const json = await geminiRes.json();
-        const text = json.candidates?.[0]?.content?.parts?.[0]?.text;
-        if (text) {
-          const parsed = JSON.parse(text);
-          return {
-            data: {
-              visa_type: parsed.visa_type || baseline.visa_type || 'embassy_visa',
-              stay_duration: parsed.stay_duration || (baseline.days ? `${baseline.days} days` : 'N/A'),
-              processing_time: parsed.processing_time || '3-5 business days',
-              estimated_cost: parsed.estimated_cost || 'N/A',
-              official_portal_url: parsed.official_portal_url || `https://www.google.com/search?q=${toCountry?.name_en}+official+visa+portal`,
-              summary: parsed.summary || '',
-              required_documents: parsed.required_documents || ['Passport with 6 months validity'],
-              steps: parsed.steps || [],
-              cached: false,
-              from_country: fromCode.toUpperCase(),
-              to_country: toCode.toUpperCase(),
-              lang
-            },
-            source: 'client_ai'
-          };
-        }
-      }
-    } catch (clientErr) {
-      console.warn('[API Client] Client Gemini failed, falling back to local dataset baseline:', clientErr);
-    }
-  }
-
-  // 3. Complete Offline Baseline Fallback
+  // 2. Complete Offline Baseline Fallback (if server route or network unreachable)
   const baseline = getQuickBaseline(fromCode, toCode);
   const toCountry = countriesList.find(c => c.code === toCode.toUpperCase());
   const fromCountry = countriesList.find(c => c.code === fromCode.toUpperCase());

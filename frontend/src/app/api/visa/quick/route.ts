@@ -8,8 +8,11 @@ export async function GET(req: Request) {
   const fromCode = (searchParams.get('from_country') || '').trim().toUpperCase();
   const toCode = (searchParams.get('to_country') || '').trim().toUpperCase();
 
-  if (!fromCode || !toCode) {
-    return NextResponse.json({ error: 'Missing from_country or to_country query parameters' }, { status: 400 });
+  if (!fromCode || !toCode || !/^[A-Z]{2}$/.test(fromCode) || !/^[A-Z]{2}$/.test(toCode)) {
+    return NextResponse.json(
+      { error: 'Invalid or missing from_country or to_country. Must be 2 uppercase ISO letters.' },
+      { status: 400 }
+    );
   }
 
   const pairKey = `${fromCode}_${toCode}`;

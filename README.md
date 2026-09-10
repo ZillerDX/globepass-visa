@@ -1,22 +1,36 @@
 # GlobePass: Global Visa & Consular Intelligence Platform
 
-A high-performance, bilingual (TH / EN) travel intelligence application for instant worldwide visa entry requirements, consular document checklists, and interactive travel roadmaps powered by Next.js 16 and Google Gemini AI.
+[![Live Site](https://img.shields.io/badge/Live%20Site-globepass--visa.vercel.app-2ea44f?style=for-the-badge&logo=vercel)](https://globepass-visa.vercel.app/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](./LICENSE)
+[![Next.js 16](https://img.shields.io/badge/Next.js-16.3-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![React 19](https://img.shields.io/badge/React-19.2-61dafb?style=for-the-badge&logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178c6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4-38b2ac?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![Google Gemini AI](https://img.shields.io/badge/Google_Gemini-2.5_Flash-orange?style=for-the-badge&logo=google)](https://aistudio.google.com/)
 
-Designed to deploy seamlessly as a **Zero-Database Serverless Web Application on Vercel**, with an optional hybrid FastAPI backend for dedicated enterprise workloads.
+> 🌐 **Official Live Production URL**: [https://globepass-visa.vercel.app/](https://globepass-visa.vercel.app/)
+
+---
+
+## 📖 Overview & Project Description
+
+**GlobePass** is a high-performance, bilingual (Thai / English) travel intelligence and consular roadmap web application. Built with Next.js 16 App Router, React 19, Tailwind CSS v4, and powered by Google Gemini 2.5 Flash, GlobePass provides travelers with instant bilateral visa status, consular document checklists, estimated processing fees, and step-by-step application guidance across 199 countries and over 39,601 bilateral diplomatic relationships.
+
+The platform is designed and optimized as a **Zero-Database Serverless Web Application deployed on Vercel**, eliminating the operational overhead and costs of dedicated cloud databases while delivering sub-millisecond initial responses through pre-indexed diplomatic matrices and secure on-demand serverless AI synthesis.
 
 ---
 
 ## 🗺️ Architecture & System Flow
 
-GlobePass offers a zero-database, serverless deployment model where Next.js App Router serves both the user interface and secure serverless route handlers:
+GlobePass operates on a serverless Edge architecture where Next.js App Router delivers the user interface while isolated Serverless Route Handlers orchestrate consular intelligence and AI synthesis:
 
 ```mermaid
 sequenceDiagram
     autonumber
     actor User as Traveler (Browser Client)
     participant FE as Next.js 16 App Router (Client & UI)
-    participant Edge as Serverless API (/api/visa/ai-guide)
-    participant Dataset as Static Diplomatic Dataset (199 Countries)
+    participant Edge as Serverless Route (/api/visa/ai-guide)
+    participant Dataset as Pre-Indexed Consular Dataset (199 Countries)
     participant AI as Google Gemini 2.5 Flash
 
     Note over User, FE: Step 1: Destination Selection
@@ -28,13 +42,13 @@ sequenceDiagram
     User->>FE: Clicks "ตรวจสอบข้อกำหนดทางการ (Check Official Requirements)"
     FE->>Edge: POST /api/visa/ai-guide { from_country: "TH", to_country: "JP", lang: "th" }
     
-    Note over Edge: Step 3: Security & Input Validation
+    Note over Edge: Step 3: Security & Input Sanitization
     Edge->>Edge: Strict ISO 3166-1 alpha-2 Regex Check (/^[A-Z]{2}$/)
     
     Note over Edge, AI: Step 4: Serverless AI Synthesis
-    alt Gemini API Key Available
+    alt Gemini API Key Configured
         Edge->>AI: Synthesize consular requirements & official embassy portal URL
-        alt AI Response OK
+        alt AI Response Success
             AI-->>Edge: Structured Consular JSON (docs, steps, fees, processing time)
             Edge-->>FE: HTTP 200 (Cache-Control: s-maxage=3600)
         else Rate-limited or Timeout
@@ -54,64 +68,50 @@ sequenceDiagram
 
 ## ✨ Key Features & Capabilities
 
-- **⚡ Zero-Database Serverless Operation**: Deploys in seconds on Vercel without provisioning cloud SQL or Redis instances.
-- **🌐 Complete Bilateral Coverage**: Includes 199 countries and over 39,000 bilateral visa arrangements via embedded consular datasets.
-- **🤖 Server-Side AI Intelligence**: Generates up-to-date document checklists, estimated processing times, consular fees, and official embassy portal links via Google Gemini 2.5 Flash.
-- **🔒 Enterprise-Grade Key Isolation**: All AI requests are executed inside serverless route handlers; zero API tokens or credentials are ever exposed to the client-side browser bundle.
-- **🏙️ Kinetic Cityscape Visuals**: Dynamic city silhouette animations inspired by world architectural landmarks with spring physics.
-- **🇹🇭 Bilingual Typography**: Fluid typography system pairing organic serif (`Fraunces`) with clean geometric Thai sans-serif (`Prompt`).
+- **⚡ Zero-Database Serverless Operation**: Deploys effortlessly on Vercel with zero external database dependencies (no PostgreSQL, Redis, or SQLite required in production).
+- **🌐 Comprehensive Bilateral Coverage**: Pre-indexes all 199 ISO countries and 39,601 bilateral diplomatic pairings.
+- **🤖 Server-Side AI Synthesis**: Generates up-to-date document dossiers, step-by-step consular roadmaps, and official embassy links via Google Gemini 2.5 Flash.
+- **🔒 Bank-Grade Key Isolation**: All AI synthesis requests execute securely inside serverless route handlers; zero API credentials or tokens are ever exposed to the client bundle.
+- **🏙️ Kinetic Cityscape Visuals**: Dynamic animated skyline silhouettes celebrating global landmarks with physics-based spring animations.
+- **🇹🇭 Bilingual Typography**: Elegant typography system pairing Google Font's organic serif (`Fraunces`) with clean Thai geometric sans-serif (`Prompt`).
+- **📱 Fully Responsive**: 375px mobile density budget with bottom navigation bar and adaptive desktop layouts.
 
 ---
 
-## ⚡ Performance & Security Metrics
+## 🛡️ Security Audit & Vulnerability Safeguards
 
-| Performance & Security Dimension | Legacy / Standard Setup | GlobePass Serverless on Vercel | Benefit |
-| :--- | :--- | :--- | :--- |
-| **Database Requirement** | Cloud PostgreSQL / MySQL | **Zero Database Required** | **\$0 operational DB cost** |
-| **API Secret Protection** | Client-side `NEXT_PUBLIC_*` | **Serverless Function Route Handlers** | **Zero client token leakage** |
-| **Input Sanitization** | Raw input strings | **Strict ISO 3166-1 alpha-2 regex** | **Prevents prompt injection** |
-| **Baseline Query Latency** | 250ms – 600ms network roundtrip | **< 5ms static memory lookup** | **Sub-millisecond UI render** |
-| **Cold Start / Failover** | Application crash on missing key | **Deterministic consular fallback** | **100% uptime guarantee** |
+GlobePass enforces strict security controls across both client and serverless boundaries:
+
+| Security Domain | Defense Mechanism | Risk Prevented |
+| :--- | :--- | :--- |
+| **Credential Protection** | API keys read strictly via `process.env.GEMINI_API_KEY` in server-side Route Handlers. No client-exposed tokens. | **Zero credential leakage or token extraction** |
+| **Input Sanitization** | All endpoints validate parameters using `/^[A-Z]{2}$/` regex against ISO 3166-1 alpha-2 standards. | **Eliminates prompt injection, parameter tampering & SSRF** |
+| **DDoS & Quota Defense** | Edge caching with `Cache-Control: public, s-maxage=3600, stale-while-revalidate=7200`. | **Mitigates rate exhaustion and unnecessary API billing** |
+| **Request Timeout** | `AbortController` timeout (10,000ms) prevents unbounded worker thread hangs. | **Prevents resource exhaustion on slow upstream services** |
+| **Deterministic Failover** | Automatic fallback to verified consular baselines if external AI APIs fail or rate limit. | **Zero service downtime (100% availability)** |
+| **Safe Error Handling** | Production error responses return sanitized messages without server stack traces. | **Prevents internal infrastructure fingerprinting** |
 
 ---
 
-## 🚀 Step-by-Step Vercel Deployment
+## 🚀 Live Production & Deployment
 
-Deploying GlobePass on Vercel requires only a few clicks and takes under 2 minutes:
+### Live Application
+- **Production URL**: [https://globepass-visa.vercel.app/](https://globepass-visa.vercel.app/)
+- **Hosting Platform**: Vercel Serverless Edge Network
+- **Status**: Operational & Live
 
-### Step 1: Import the Repository
-1. Navigate to your [Vercel Dashboard](https://vercel.com/dashboard).
-2. Click **Add New...** ➔ **Project**.
-3. Select and import `ZillerDX/globepass-visa` from your connected GitHub account.
+### Deploying Your Own Instance on Vercel
 
-### Step 2: Configure the Root Directory
-> [!IMPORTANT]
-> The repository contains both `frontend` and `backend` directories. You must set the root directory to `frontend`.
-
-1. In the **Project Configuration** panel, find **Root Directory**.
-2. Click **Edit** and select or type `frontend`.
-3. Click **Continue**.
-
-### Step 3: Verify Framework Preset
-- Framework Preset should automatically detect as **Next.js**.
-
-### Step 4: Set Environment Variables
-Under the **Environment Variables** section, add your Google Gemini API key:
-- **Key**: `GEMINI_API_KEY`
-- **Value**: `<your_gemini_api_key>` (Obtained from [Google AI Studio](https://aistudio.google.com/app/apikey))
-- Target Environments: `Production`, `Preview`, `Development`.
-
-*(Note: Even if `GEMINI_API_KEY` is omitted, the app will run cleanly with offline deterministic consular rules).*
-
-### Step 5: Deploy
-- Click **Deploy**.
-- Vercel will run Turbopack, compile TypeScript, optimize routes, and generate your live preview URL (e.g. `https://globepass-visa.vercel.app`).
+1. **Fork or Import**: Import repository `ZillerDX/globepass-visa` in your [Vercel Dashboard](https://vercel.com/dashboard).
+2. **Root Directory**: Set **Root Directory** to `frontend`.
+3. **Framework**: Vercel automatically selects **Next.js**.
+4. **Environment Variables**:
+   - `GEMINI_API_KEY`: Your Google AI Studio API key.
+5. **Deploy**: Click **Deploy** to launch in under 60 seconds.
 
 ---
 
 ## 💻 Local Development Setup
-
-### Running the Next.js Frontend Locally
 
 ```bash
 # 1. Clone the repository
@@ -121,17 +121,17 @@ cd globepass-visa/frontend
 # 2. Install dependencies
 npm install
 
-# 3. Create environment file
+# 3. Create local environment file
 cp .env.example .env.local
 
-# 4. (Optional) Set your Gemini API key in .env.local
-# GEMINI_API_KEY=your_actual_key_here
+# 4. Add your Gemini API key (optional for local AI testing)
+# GEMINI_API_KEY=your_key_here
 
 # 5. Start development server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Visit [http://localhost:3000](http://localhost:3000) to view the application locally.
 
 ---
 
@@ -139,40 +139,38 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ```
 globepass-visa/
-├── frontend/                     # Next.js 16 App Router (Vercel Root)
+├── frontend/                     # Next.js 16 App Router (Vercel Production Root)
 │   ├── src/
 │   │   ├── app/
-│   │   │   ├── api/visa/ai-guide # Serverless AI synthesis route
-│   │   │   ├── api/visa/quick    # Serverless baseline route
+│   │   │   ├── api/visa/ai-guide # Serverless AI consular synthesis route
+│   │   │   ├── api/visa/quick    # Serverless baseline lookup route
 │   │   │   ├── layout.tsx        # Root layout & bilingual fonts
-│   │   │   └── page.tsx          # Main interactive interface
+│   │   │   └── page.tsx          # Main interactive application page
 │   │   ├── components/
-│   │   │   ├── CitySilhouette.tsx# Animated architectural skyline
+│   │   │   ├── CitySilhouette.tsx# Kinetic architectural skyline component
 │   │   │   ├── CountryCard.tsx   # Popular destination cards
-│   │   │   ├── VisaResult.tsx    # Consular guide dossier & steps
+│   │   │   ├── VisaResult.tsx    # Consular guide dossier & step timeline
+│   │   │   ├── Navbar.tsx        # Clean brand navbar & language toggle
 │   │   │   └── ui/               # Modular UI controls
 │   │   ├── lib/
-│   │   │   ├── api.ts            # Dynamic API client & fallbacks
-│   │   │   └── data/             # 199 Countries & bilateral matrices
+│   │   │   ├── api.ts            # Dynamic client API & failover handler
+│   │   │   ├── i18n.ts           # Thai & English translation dictionaries
+│   │   │   └── data/             # 199 Countries & bilateral visa matrices
 │   │   └── types/                # TypeScript interfaces
-│   └── package.json
-├── backend/                      # Optional Python FastAPI service
+│   ├── package.json
+│   └── next.config.ts
+├── backend/                      # Optional Python FastAPI service (local/hybrid)
 │   ├── app/                      # Endpoints, database models & scrapers
 │   └── requirements.txt
-└── README.md                     # Documentation & deployment guide
+├── LICENSE                       # MIT License
+└── README.md                     # Documentation & technical specifications
 ```
-
----
-
-## 🛡️ Security & Responsible AI
-
-- **Input Validation**: All incoming requests to `/api/visa/ai-guide` validate that origin and destination codes adhere to the ISO 3166-1 alpha-2 standard (`/^[A-Z]{2}$/`).
-- **Prompt Isolation**: System prompts enforce JSON schema conformity, preventing arbitrary model responses.
-- **Edge Caching**: Responses are cached using `Cache-Control: public, s-maxage=3600, stale-while-revalidate=7200` to avoid unnecessary external API costs.
-- **Official Source Links**: Generated guides provide direct links to official government and consular portals for real-time travel confirmation.
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License. Data sourced from public international consular and passport registries.
+This project is open source and available under the terms of the [MIT License](./LICENSE).
+
+Copyright (c) 2026 Tanathon Chanapha (ZillerDX)
+

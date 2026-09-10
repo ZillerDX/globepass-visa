@@ -22,32 +22,10 @@ export default function Home() {
   const [toCountry, setToCountry] = useState<string>('JP'); // Default Japan
   const [guide, setGuide] = useState<VisaGuideResponse | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
-  const [backendOnline, setBackendOnline] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<string>('all');
   const resultsRef = useRef<HTMLDivElement>(null);
 
   const t = i18n[lang];
-
-  // Check backend health on mount with 3s timeout (does NOT trigger AI)
-  useEffect(() => {
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), 3000);
-
-    fetch('http://localhost:8000/api/health', { signal: controller.signal })
-      .then((res) => {
-        clearTimeout(timer);
-        if (res.ok) setBackendOnline(true);
-      })
-      .catch(() => {
-        clearTimeout(timer);
-        setBackendOnline(false);
-      });
-
-    return () => {
-      clearTimeout(timer);
-      controller.abort();
-    };
-  }, []);
 
   // ONLY triggered when user clicks "Check Official Requirements" button
   const handleCheck = useCallback(async () => {
@@ -94,7 +72,6 @@ export default function Home() {
       <Navbar
         lang={lang}
         onLanguageChange={handleLanguageChange}
-        backendOnline={backendOnline}
       />
 
       {/* Main Content Area: Harmonized max-w-5xl container ensuring 100% symmetry */}

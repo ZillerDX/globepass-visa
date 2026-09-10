@@ -199,7 +199,7 @@ export async function POST(req: Request) {
     };
 
     const baseline = getBaseline(fromCode, toCode);
-    const apiKey = process.env.GEMINI_API_KEY || process.env.NEXT_PUBLIC_GEMINI_API_KEY || '';
+    const apiKey = process.env.GEMINI_API_KEY || '';
 
     // If Gemini key is available on the server environment, synthesize via Gemini Flash
     if (apiKey) {
