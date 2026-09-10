@@ -70,10 +70,13 @@ export function HeroTravelAnimation({ children }: HeroTravelAnimationProps) {
       const headingDeg = (Math.atan2(dy, dx) * 180) / Math.PI + 90;
       const bankDeg = Math.sin(rad) * 20;
 
+      // Precise pivot at airplane center (23px, 21px)
+      const transformValue = `translate(calc(-23px + ${planeX}px), calc(-21px + ${planeY}px)) scale(${scale}) rotate(${headingDeg}deg) rotateZ(${bankDeg * 0.3}deg)`;
+
       // Direct DOM transformation for silky-smooth 60fps without React re-renders
       if (isFront) {
         if (airplaneFrontRef.current) {
-          airplaneFrontRef.current.style.transform = `translate(calc(-50% + ${planeX}px), calc(-50% + ${planeY}px)) scale(${scale}) rotate(${headingDeg}deg) rotateZ(${bankDeg * 0.3}deg)`;
+          airplaneFrontRef.current.style.transform = transformValue;
           airplaneFrontRef.current.style.opacity = `${opacity}`;
           airplaneFrontRef.current.style.display = 'flex';
         }
@@ -82,7 +85,7 @@ export function HeroTravelAnimation({ children }: HeroTravelAnimationProps) {
         }
       } else {
         if (airplaneBackRef.current) {
-          airplaneBackRef.current.style.transform = `translate(calc(-50% + ${planeX}px), calc(-50% + ${planeY}px)) scale(${scale}) rotate(${headingDeg}deg) rotateZ(${bankDeg * 0.3}deg)`;
+          airplaneBackRef.current.style.transform = transformValue;
           airplaneBackRef.current.style.opacity = `${opacity * 0.75}`;
           airplaneBackRef.current.style.display = 'flex';
         }
@@ -185,12 +188,10 @@ export function HeroTravelAnimation({ children }: HeroTravelAnimationProps) {
         }}
       >
         <svg width="130" height="70" viewBox="0 0 130 70" fill="none" className="drop-shadow-sm opacity-95">
-          {/* Cloud body */}
           <path
             d="M30 52H105C115 52 122 45 122 36C122 27.5 115 21 106 20.5C103.5 12 95 6 85 6C73 6 63 15 62 26C58 24 53 24 48 27C39 27 32 33 32 42C24 42 18 47 18 52Z"
             fill="url(#cloud-white-grad)"
           />
-          {/* Soft peach underside highlight */}
           <path
             d="M35 52C42 50 50 48 60 48C72 48 85 50 100 52"
             stroke="#FFBDBD"
@@ -292,6 +293,7 @@ export function HeroTravelAnimation({ children }: HeroTravelAnimationProps) {
       <div
         ref={airplaneBackRef}
         className="absolute left-1/2 top-1/2 pointer-events-none -z-10 hidden items-center justify-center will-change-transform"
+        style={{ transformOrigin: '23px 21px' }}
       >
         <HighFidelityJet isFront={false} />
       </div>
@@ -305,6 +307,7 @@ export function HeroTravelAnimation({ children }: HeroTravelAnimationProps) {
       <div
         ref={airplaneFrontRef}
         className="absolute left-1/2 top-1/2 pointer-events-none z-20 hidden items-center justify-center will-change-transform"
+        style={{ transformOrigin: '23px 21px' }}
       >
         <HighFidelityJet isFront={true} />
       </div>
@@ -336,97 +339,116 @@ export function HeroTravelAnimation({ children }: HeroTravelAnimationProps) {
   );
 }
 
-// High-Fidelity 3D Jetliner with Dual Jet Contrail
+// High-Fidelity 3D Jetliner with Perfectly Symmetrical Dual Wing Jet Streams
 function HighFidelityJet({ isFront }: { isFront: boolean }) {
   return (
-    <div className="relative flex items-center justify-center">
-      {/* Jet Exhaust Ribbon (Luminous Twin Contrails) */}
-      <div
-        className="absolute top-8 -left-2 w-1 h-16 rounded-full pointer-events-none"
-        style={{
-          background: isFront
-            ? 'linear-gradient(to bottom, rgba(255, 164, 164, 0.95), rgba(186, 223, 219, 0.6), transparent)'
-            : 'linear-gradient(to bottom, rgba(186, 223, 219, 0.4), transparent)',
-          filter: 'blur(0.8px)'
-        }}
-      />
-      <div
-        className="absolute top-8 left-2 w-1 h-16 rounded-full pointer-events-none"
-        style={{
-          background: isFront
-            ? 'linear-gradient(to bottom, rgba(255, 164, 164, 0.95), rgba(186, 223, 219, 0.6), transparent)'
-            : 'linear-gradient(to bottom, rgba(186, 223, 219, 0.4), transparent)',
-          filter: 'blur(0.8px)'
-        }}
-      />
-
-      {/* Vector Supersonic Jet */}
+    <div className="relative flex items-center justify-center" style={{ width: 46, height: 110 }}>
       <svg
-        width="42"
-        height="42"
-        viewBox="0 0 42 42"
+        width="46"
+        height="110"
+        viewBox="0 0 46 110"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className={isFront ? 'drop-shadow-lg' : 'drop-shadow-2xs'}
+        style={{ overflow: 'visible' }}
       >
         <defs>
-          <linearGradient id="jet-wing" x1="0" y1="0" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+          {/* Symmetrical Twin Jet Contrail Gradients */}
+          <linearGradient id="jet-stream-left" x1="16" y1="31" x2="16" y2="105" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="#FFA4A4" stopOpacity={isFront ? "0.95" : "0.55"} />
+            <stop offset="15%" stopColor="#FFBDBD" stopOpacity={isFront ? "0.85" : "0.45"} />
+            <stop offset="45%" stopColor="#BADFDB" stopOpacity={isFront ? "0.55" : "0.3"} />
+            <stop offset="100%" stopColor="#BADFDB" stopOpacity="0" />
+          </linearGradient>
+          <linearGradient id="jet-stream-right" x1="30" y1="31" x2="30" y2="105" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="#FFA4A4" stopOpacity={isFront ? "0.95" : "0.55"} />
+            <stop offset="15%" stopColor="#FFBDBD" stopOpacity={isFront ? "0.85" : "0.45"} />
+            <stop offset="45%" stopColor="#BADFDB" stopOpacity={isFront ? "0.55" : "0.3"} />
+            <stop offset="100%" stopColor="#BADFDB" stopOpacity="0" />
+          </linearGradient>
+
+          {/* Aircraft Materials */}
+          <linearGradient id="jet-wing" x1="3" y1="13" x2="43" y2="33" gradientUnits="userSpaceOnUse">
             <stop offset="0%" stopColor="#FFFFFF" />
             <stop offset="50%" stopColor="#FCF9EA" />
             <stop offset="100%" stopColor="#FFA4A4" />
           </linearGradient>
-          <linearGradient id="jet-body" x1="21" y1="2" x2="21" y2="40" gradientUnits="userSpaceOnUse">
+          <linearGradient id="jet-body" x1="23" y1="3" x2="23" y2="39" gradientUnits="userSpaceOnUse">
             <stop offset="0%" stopColor="#FFFFFF" />
             <stop offset="40%" stopColor="#E6F4F1" />
             <stop offset="75%" stopColor="#BADFDB" />
             <stop offset="100%" stopColor="#1D6B63" />
           </linearGradient>
+          <filter id="jet-stream-blur" x="-30%" y="-10%" width="160%" height="130%">
+            <feGaussianBlur stdDeviation="1.2" />
+          </filter>
         </defs>
 
-        {/* Delta Wings */}
+        {/* --- JET ENGINE EXHAUST STREAMS (Symmetrical on both wings) --- */}
+        <g filter="url(#jet-stream-blur)">
+          {/* Left Wing Engine Stream (Center X = 16) */}
+          <path
+            d="M 14.5 31 Q 13 65 11 105 Q 16 105 17.5 31 Z"
+            fill="url(#jet-stream-left)"
+          />
+          {/* Right Wing Engine Stream (Center X = 30) */}
+          <path
+            d="M 28.5 31 Q 30 65 35 105 Q 33 105 31.5 31 Z"
+            fill="url(#jet-stream-right)"
+          />
+        </g>
+
+        {/* Dual Afterburner Flame Cores */}
+        <circle cx="16" cy="32" r="2.2" fill="#FFA4A4" opacity={isFront ? "0.95" : "0.6"} />
+        <circle cx="16" cy="31" r="1.3" fill="#FFFFFF" />
+        <circle cx="30" cy="32" r="2.2" fill="#FFA4A4" opacity={isFront ? "0.95" : "0.6"} />
+        <circle cx="30" cy="31" r="1.3" fill="#FFFFFF" />
+
+        {/* --- AIRFRAME --- */}
+        {/* Swept Delta Wings */}
         <path
-          d="M21 12L39 27L30 28L21 21L12 28L3 27L21 12Z"
+          d="M23 13L43 28L33 29L23 22L13 29L3 28L23 13Z"
           fill="url(#jet-wing)"
           stroke="#1A232B"
           strokeWidth="0.8"
           strokeLinejoin="round"
         />
 
-        {/* Twin Jet Engines under Wings */}
-        <rect x="14" y="22" width="3" height="7" rx="1.5" fill="#1D6B63" stroke="#1A232B" strokeWidth="0.5" />
-        <rect x="25" y="22" width="3" height="7" rx="1.5" fill="#1D6B63" stroke="#1A232B" strokeWidth="0.5" />
-        <circle cx="15.5" cy="29" r="1" fill="#FFA4A4" />
-        <circle cx="26.5" cy="29" r="1" fill="#FFA4A4" />
+        {/* Left Engine Pod (Nacelle) */}
+        <rect x="14" y="22" width="4" height="9" rx="2" fill="#1D6B63" stroke="#1A232B" strokeWidth="0.6" />
+        
+        {/* Right Engine Pod (Nacelle) */}
+        <rect x="28" y="22" width="4" height="9" rx="2" fill="#1D6B63" stroke="#1A232B" strokeWidth="0.6" />
 
         {/* Twin Tail Stabilizers */}
         <path
-          d="M21 26L28 36L24.5 37L21 31L17.5 37L14 36L21 26Z"
+          d="M23 27L30 37L26.5 38L23 32L19.5 38L16 37L23 27Z"
           fill="#FFA4A4"
           stroke="#1A232B"
           strokeWidth="0.6"
           strokeLinejoin="round"
         />
 
-        {/* Aerodynamic Fuselage Needle */}
+        {/* Fuselage Needle */}
         <path
-          d="M21 2C19.5 6 18.5 15 18.5 34C18.5 36.5 19.5 38 21 38C22.5 38 23.5 36.5 23.5 34C23.5 15 22.5 6 21 2Z"
+          d="M23 3C21.5 7 20.5 16 20.5 35C20.5 37.5 21.5 39 23 39C24.5 39 25.5 37.5 25.5 35C25.5 16 24.5 7 23 3Z"
           fill="url(#jet-body)"
           stroke="#1A232B"
           strokeWidth="0.9"
         />
 
-        {/* Tinted Cockpit Glass */}
-        <ellipse cx="21" cy="9" rx="1.5" ry="3" fill="#1A232B" />
+        {/* Cockpit Canopy */}
+        <ellipse cx="23" cy="9.5" rx="1.5" ry="3" fill="#1A232B" />
 
-        {/* Cabin Window Portholes */}
-        <circle cx="21" cy="15" r="0.6" fill="#1D6B63" />
-        <circle cx="21" cy="18" r="0.6" fill="#1D6B63" />
-        <circle cx="21" cy="21" r="0.6" fill="#1D6B63" />
-        <circle cx="21" cy="24" r="0.6" fill="#1D6B63" />
+        {/* Cabin Portholes */}
+        <circle cx="23" cy="16" r="0.6" fill="#1D6B63" />
+        <circle cx="23" cy="19" r="0.6" fill="#1D6B63" />
+        <circle cx="23" cy="22" r="0.6" fill="#1D6B63" />
+        <circle cx="23" cy="25" r="0.6" fill="#1D6B63" />
 
-        {/* Wingtip Navigation Lights */}
-        <circle cx="38.5" cy="27" r="1.3" fill="#22C55E" />
-        <circle cx="3.5" cy="27" r="1.3" fill="#EF4444" />
+        {/* Wingtip Navigation Beacons */}
+        <circle cx="42.5" cy="28" r="1.3" fill="#22C55E" />
+        <circle cx="3.5" cy="28" r="1.3" fill="#EF4444" />
       </svg>
     </div>
   );
