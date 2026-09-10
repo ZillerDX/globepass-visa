@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef, useState, useEffect } from 'react';
 import { CountryFlag } from './CountryFlag';
 import { Language, i18n } from '@/lib/i18n';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { getQuickBaseline } from '@/lib/api';
 import { Country } from '@/types/visa';
 import { WorldCitySkyline } from './WorldCitySkyline';
@@ -130,6 +130,39 @@ export function DestinationGallery({ onSelect, fromCountry, countries, lang }: D
     return lang === 'th' ? originCountry.name_th : originCountry.name_en;
   }, [originCountry, lang]);
 
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const checkScroll = () => {
+    const el = scrollContainerRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 15);
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 15);
+  };
+
+  useEffect(() => {
+    checkScroll();
+    const el = scrollContainerRef.current;
+    if (el) {
+      el.addEventListener('scroll', checkScroll, { passive: true });
+      window.addEventListener('resize', checkScroll);
+      const timer = setTimeout(checkScroll, 150);
+      return () => {
+        el.removeEventListener('scroll', checkScroll);
+        window.removeEventListener('resize', checkScroll);
+        clearTimeout(timer);
+      };
+    }
+  }, []);
+
+  const handleScroll = (direction: 'left' | 'right') => {
+    const el = scrollContainerRef.current;
+    if (!el) return;
+    const scrollAmount = direction === 'left' ? -340 : 340;
+    el.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  };
+
   return (
     <div className="w-full mt-4 sm:mt-5 mb-12">
       {/* Section Header with Animated World City Skyline */}
@@ -146,9 +179,38 @@ export function DestinationGallery({ onSelect, fromCountry, countries, lang }: D
         </div>
       </div>
 
-      {/* Horizontal Rail: Generous padding (pt-3 pb-8 px-2) prevents clipping */}
-      <div className="relative">
-        <div className="flex gap-5 overflow-x-auto pt-3 pb-8 px-2 -mx-2 snap-x scrollbar-none">
+      {/* Horizontal Rail with Navigation Buttons */}
+      <div className="relative group">
+        {/* Left Scroll Button */}
+        <button
+          type="button"
+          onClick={() => handleScroll('left')}
+          disabled={!canScrollLeft}
+          aria-label="Previous Destinations"
+          className={`absolute -left-2 sm:-left-4 top-[42%] -translate-y-1/2 z-20 size-10 sm:size-11 rounded-full bg-white/95 backdrop-blur-md border border-[#BADFDB] shadow-md text-[#1D6B63] flex items-center justify-center transition-all duration-200 hover:bg-[#FFA4A4] hover:border-[#FFA4A4] hover:text-white hover:scale-110 active:scale-95 ${
+            canScrollLeft ? 'opacity-100 cursor-pointer shadow-md' : 'opacity-0 pointer-events-none'
+          }`}
+        >
+          <ChevronLeft className="size-5 shrink-0" />
+        </button>
+
+        {/* Right Scroll Button */}
+        <button
+          type="button"
+          onClick={() => handleScroll('right')}
+          disabled={!canScrollRight}
+          aria-label="Next Destinations"
+          className={`absolute -right-2 sm:-right-4 top-[42%] -translate-y-1/2 z-20 size-10 sm:size-11 rounded-full bg-white/95 backdrop-blur-md border border-[#BADFDB] shadow-md text-[#1D6B63] flex items-center justify-center transition-all duration-200 hover:bg-[#FFA4A4] hover:border-[#FFA4A4] hover:text-white hover:scale-110 active:scale-95 ${
+            canScrollRight ? 'opacity-100 cursor-pointer shadow-md' : 'opacity-0 pointer-events-none'
+          }`}
+        >
+          <ChevronRight className="size-5 shrink-0" />
+        </button>
+
+        <div
+          ref={scrollContainerRef}
+          className="flex gap-5 overflow-x-auto pt-3 pb-8 px-2 -mx-2 snap-x scrollbar-none scroll-smooth"
+        >
           {DESTINATIONS.map((dest) => {
             const policyText = formatCardStatus(fromCountry, dest.code, lang);
 
