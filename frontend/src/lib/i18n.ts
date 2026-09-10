@@ -4,7 +4,7 @@ export const i18n = {
   th: {
     appTitle: "GlobePass",
     appSubtitle: "ระบบตรวจสอบข้อกำหนดวีซ่าและคู่มือยื่นคำร้องกงสุลทั่วโลก",
-    tagline: "ตรวจสอบสิทธิ์พำนัก เอกสารที่ต้องใช้ และขั้นตอนยื่นวีซ่า 199 ประเทศ 39,601 คู่ความสัมพันธ์ทางการทูต",
+    tagline: "ตรวจสอบสิทธิ์พำนัก เอกสารที่ต้องใช้ และขั้นตอนยื่นวีซ่า 199 ประเทศ 39,601 คู่ความสัมพันธ์ทางการ\u2060ทูต",
     fromLabel: "ประเทศผู้ถือพาสปอร์ต (Origin)",
     toLabel: "ประเทศปลายทาง (Destination)",
     selectFromPlaceholder: "เลือกประเทศผู้ถือหนังสือเดินทาง...",
@@ -63,7 +63,9 @@ export const i18n = {
     backendConnected: "ระบบกงสุลออนไลน์",
     backendOffline: "โหมดสแตนด์อโลน",
     proofBanner: "ข้อมูลถูกต้องตามระเบียบกงสุลสากล ตรวจสอบจากฐานข้อมูล Passport Index",
-    proofNotice: "ข้อมูลอาจไม่อัปเดตตามปัจจุบัน โปรดตรวจสอบข้อมูลจากเว็บไซต์ทางการของประเทศที่จะไปด้วย เมื่อใช้งานฟังก์ชัน AI ตรวจสอบข้อกำหนด ระบบจะแสดงลิงก์เว็บไซต์กงสุลทางการของประเทศนั้นๆ"
+    proofNotice: "ข้อมูลอาจไม่อัปเดตตามปัจจุบัน โปรดตรวจสอบข้อมูลจากเว็บไซต์ทางการของประเทศที่จะไปด้วย เมื่อใช้งานฟังก์ชัน AI ตรวจสอบข้อกำหนด ระบบจะแสดงลิงก์เว็บไซต์กงสุลทางการของประเทศนั้นๆ",
+    proofNotice1: "ข้อมูลอาจไม่อัปเดตตามปัจจุบัน โปรดตรวจสอบข้อมูลจากเว็บไซต์ทางการของประเทศที่จะไปด้วย เมื่อใช้งานฟังก์ชัน AI ตรวจสอบข้อกำหนด",
+    proofNotice2: "ระบบจะแสดงลิงก์เว็บไซต์กงสุลทางการของประเทศนั้นๆ"
   },
   en: {
     appTitle: "GlobePass",
@@ -127,6 +129,8 @@ export const i18n = {
     backendConnected: "Consular Engine Online",
     backendOffline: "Standalone Offline Mode",
     proofBanner: "Verified across 39,601 country pairs against international consular regulations and the",
-    proofNotice: "Information may not reflect real-time updates. Please verify official requirements with the destination country. Running the AI verification will display the official consular website link for that country."
+    proofNotice: "Information may not reflect real-time updates. Please verify official requirements with the destination country. Running the AI verification will display the official consular website link for that country.",
+    proofNotice1: "Information may not reflect real-time updates. Please verify official requirements with the destination country.",
+    proofNotice2: "Running the AI verification will display the official consular website link for that country."
   }
 };

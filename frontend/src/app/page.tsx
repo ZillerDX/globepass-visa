@@ -238,10 +238,13 @@ export default function Home() {
             </a>
           </p>
 
-          <div className="pt-2 border-t border-[#BADFDB]/40 flex items-start justify-center gap-2 text-[11px] text-[#7D8D9C] max-w-2xl mx-auto text-left">
-            <Info className="size-3.5 text-[#1D6B63] shrink-0 mt-0.5" />
-            <p className="leading-relaxed text-left">
-              {t.proofNotice}
+          <div className="pt-2.5 border-t border-[#BADFDB]/40 text-[11px] text-[#7D8D9C] max-w-3xl mx-auto text-center space-y-1">
+            <p className="leading-relaxed text-center">
+              <Info className="size-3.5 text-[#1D6B63] shrink-0 inline-block align-[-2px] mr-1.5" />
+              <span>{t.proofNotice1}</span>
+            </p>
+            <p className="text-center font-normal text-[#5A6977] leading-relaxed">
+              {t.proofNotice2}
             </p>
           </div>
         </div>
