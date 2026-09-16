@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useCallback, useRef } from 'react';
 import { Navbar } from '@/components/Navbar';
 import { SearchHero } from '@/components/SearchHero';
 import { DestinationGallery } from '@/components/DestinationGallery';

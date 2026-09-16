@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo, useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { CountryFlag } from './CountryFlag';
 import { Language, i18n } from '@/lib/i18n';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -22,50 +22,98 @@ const DESTINATIONS: DestinationCard[] = [
     code: 'JP',
     name_en: 'Japan',
     name_th: 'ญี่ปุ่น',
-    city_en: 'Tokyo and Kyoto',
+    city_en: 'Tokyo & Kyoto',
     city_th: 'โตเกียวและเกียวโต',
-    image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&h=400&q=80'
+    image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=700&auto=format&fit=crop&q=80',
   },
   {
     code: 'SG',
     name_en: 'Singapore',
     name_th: 'สิงคโปร์',
-    city_en: 'Marina Bay and Sentosa',
+    city_en: 'Marina Bay & Sentosa',
     city_th: 'มารีนาเบย์และเซนโตซา',
-    image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=600&h=400&q=80'
+    image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=700&auto=format&fit=crop&q=80',
   },
   {
     code: 'CN',
     name_en: 'China',
     name_th: 'จีน',
-    city_en: 'Beijing and Shanghai',
+    city_en: 'Beijing & Shanghai',
     city_th: 'ปักกิ่งและเซี่ยงไฮ้',
-    image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=600&h=400&q=80'
+    image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=700&auto=format&fit=crop&q=80',
   },
   {
     code: 'KR',
     name_en: 'South Korea',
     name_th: 'เกาหลีใต้',
-    city_en: 'Seoul and Busan',
+    city_en: 'Seoul & Busan',
     city_th: 'โซลและปูซาน',
-    image: 'https://images.unsplash.com/photo-1538485399081-7191377e8241?auto=format&fit=crop&w=600&h=400&q=80'
+    image: 'https://images.unsplash.com/photo-1538485399081-7191377e8241?w=700&auto=format&fit=crop&q=80',
   },
   {
     code: 'US',
     name_en: 'United States',
     name_th: 'สหรัฐอเมริกา',
-    city_en: 'New York and California',
-    city_th: 'นิวยอร์กและแคลิฟอร์เนีย',
-    image: 'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=600&h=400&q=80'
+    city_en: 'New York & San Francisco',
+    city_th: 'นิวยอร์กและซานฟรานซิสโก',
+    image: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=700&auto=format&fit=crop&q=80',
   },
   {
     code: 'GB',
     name_en: 'United Kingdom',
     name_th: 'สหราชอาณาจักร',
-    city_en: 'London and Edinburgh',
+    city_en: 'London & Edinburgh',
     city_th: 'ลอนดอนและเอดินบะระ',
-    image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=600&h=400&q=80'
-  }
+    image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=700&auto=format&fit=crop&q=80',
+  },
+  {
+    code: 'FR',
+    name_en: 'France',
+    name_th: 'ฝรั่งเศส',
+    city_en: 'Paris & Nice',
+    city_th: 'ปารีสและนีซ',
+    image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=700&auto=format&fit=crop&q=80',
+  },
+  {
+    code: 'CH',
+    name_en: 'Switzerland',
+    name_th: 'สวิตเซอร์แลนด์',
+    city_en: 'Zurich & Geneva',
+    city_th: 'ซูริกและเจนีวา',
+    image: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=700&auto=format&fit=crop&q=80',
+  },
+  {
+    code: 'DE',
+    name_en: 'Germany',
+    name_th: 'เยอรมนี',
+    city_en: 'Berlin & Munich',
+    city_th: 'เบอร์ลินและมิวนิก',
+    image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=700&auto=format&fit=crop&q=80',
+  },
+  {
+    code: 'AU',
+    name_en: 'Australia',
+    name_th: 'ออสเตรเลีย',
+    city_en: 'Sydney & Melbourne',
+    city_th: 'ซิดนีย์และเมลเบิร์น',
+    image: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=700&auto=format&fit=crop&q=80',
+  },
+  {
+    code: 'TW',
+    name_en: 'Taiwan',
+    name_th: 'ไต้หวัน',
+    city_en: 'Taipei & Kaohsiung',
+    city_th: 'ไทเปและเกาสง',
+    image: 'https://images.unsplash.com/photo-1508248467877-aec1b08de376?w=700&auto=format&fit=crop&q=80',
+  },
+  {
+    code: 'HK',
+    name_en: 'Hong Kong',
+    name_th: 'ฮ่องกง',
+    city_en: 'Victoria Harbour',
+    city_th: 'อ่าววิกตอเรีย',
+    image: 'https://images.unsplash.com/photo-1506970845246-18f21d533b20?w=700&auto=format&fit=crop&q=80',
+  },
 ];
 
 function formatCardStatus(fromCode: string, toCode: string, lang: Language): string {
@@ -113,22 +161,13 @@ function formatCardStatus(fromCode: string, toCode: string, lang: Language): str
 interface DestinationGalleryProps {
   onSelect: (code: string) => void;
   fromCountry: string;
-  countries: Country[];
+  countries?: Country[];
   lang: Language;
 }
 
-export function DestinationGallery({ onSelect, fromCountry, countries, lang }: DestinationGalleryProps) {
+export function DestinationGallery({ onSelect, fromCountry, lang }: DestinationGalleryProps) {
   const t = i18n[lang];
 
-  // Dynamically resolve Origin Country Name
-  const originCountry = useMemo(() => {
-    return countries.find((c) => c.code.toUpperCase() === fromCountry.toUpperCase());
-  }, [countries, fromCountry]);
-
-  const originName = useMemo(() => {
-    if (!originCountry) return lang === 'th' ? 'ไทย' : 'Thailand';
-    return lang === 'th' ? originCountry.name_th : originCountry.name_en;
-  }, [originCountry, lang]);
 
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -223,6 +262,7 @@ export function DestinationGallery({ onSelect, fromCountry, countries, lang }: D
               >
                 {/* Real Destination Photography with Ratio */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#BADFDB]/30">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={dest.image}
                     alt={dest.name_en}

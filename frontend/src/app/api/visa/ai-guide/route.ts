@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server';
-import { Country, VisaGuideResponse } from '@/types/visa';
+import { Country, VisaGuideResponse, MatrixEntry, VisaType } from '@/types/visa';
 import rawCountries from '@/lib/data/countries.json';
 import rawPopularMatrix from '@/lib/data/popular_matrix.json';
 
 const countriesList: Country[] = rawCountries as Country[];
-const popularMatrix = rawPopularMatrix as Record<string, any>;
+const popularMatrix = rawPopularMatrix as Record<string, MatrixEntry>;
 
 function getBaseline(fromCode: string, toCode: string) {
   const pairKey = `${fromCode.toUpperCase()}_${toCode.toUpperCase()}`;
@@ -147,7 +147,7 @@ function generateDeterministicFallback(
   }
 
   return {
-    visa_type: vtype,
+    visa_type: (vtype as VisaType) || 'embassy_visa',
     stay_duration: stay,
     processing_time: processing,
     estimated_cost: cost,

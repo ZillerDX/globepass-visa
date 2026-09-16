@@ -1,4 +1,4 @@
-﻿name: CI Verification
+name: CI Verification
 
 on:
   push:
@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: ["main"]
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   verify:

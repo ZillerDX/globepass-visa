@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Language } from '@/lib/i18n';
 
 interface WorldCitySkylineProps {
@@ -8,12 +8,8 @@ interface WorldCitySkylineProps {
 }
 
 export function WorldCitySkyline({ lang = 'th' }: WorldCitySkylineProps) {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <div
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
       className="group relative w-full sm:w-[490px] h-[105px] overflow-visible select-none pointer-events-auto transition-transform duration-300 hover:scale-[1.01]"
       title={lang === 'th' ? 'สถาปัตยกรรมแลนด์มาร์กระดับโลกหลากหลายระดับ (โตเกียว, ลอนดอน, สิงคโปร์, นิวยอร์ก, กรุงเทพฯ, ปารีส)' : 'World Architectural Landmarks (Tokyo, London, Singapore, New York, Bangkok, Paris)'}
     >

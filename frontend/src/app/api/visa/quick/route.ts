@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
+import { MatrixEntry } from '@/types/visa';
 import rawPopularMatrix from '@/lib/data/popular_matrix.json';
 
-const popularMatrix = rawPopularMatrix as Record<string, any>;
+const popularMatrix = rawPopularMatrix as Record<string, MatrixEntry>;
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);

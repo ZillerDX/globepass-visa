@@ -1,11 +1,11 @@
-import { Country, VisaGuideResponse, QuickVisaInfo } from '@/types/visa';
+import { Country, VisaGuideResponse, QuickVisaInfo, MatrixEntry, VisaType } from '@/types/visa';
 import rawCountries from './data/countries.json';
 import rawPopularMatrix from './data/popular_matrix.json';
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || '';
 
 export const countriesList: Country[] = rawCountries as Country[];
-const popularMatrix = rawPopularMatrix as Record<string, any>;
+const popularMatrix = rawPopularMatrix as Record<string, MatrixEntry>;
 
 export function getCountries(): Country[] {
   return countriesList;
@@ -104,7 +104,7 @@ export async function fetchVisaGuide(
 
   return {
     data: {
-      visa_type: (baseline.visa_type as any) || 'embassy_visa',
+      visa_type: (baseline.visa_type as VisaType) || 'embassy_visa',
       stay_duration: baseline.days ? (isThai ? `สูงสุด ${baseline.days} วัน` : `Up to ${baseline.days} days`) : (isThai ? 'ตามที่กำหนดในวีซ่า' : 'As determined on visa'),
       processing_time: baseline.visa_type === 'visa_free' ? (isThai ? 'อนุมัติทันที ณ ด่านตรวจ' : 'Immediate upon entry') : (isThai ? '3 to 7 วันทำการ' : '3 to 7 business days'),
       estimated_cost: baseline.visa_type === 'visa_free' ? (isThai ? 'ฟรี (ไม่มีค่าธรรมเนียม)' : 'Free') : (isThai ? 'ประมาณ 1,500 ถึง 3,500 บาท' : 'Approx. USD 35 to 100'),

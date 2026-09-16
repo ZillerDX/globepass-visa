@@ -36,3 +36,11 @@ export interface QuickVisaInfo {
   label: string;
   raw?: string;
 }
+
+export interface MatrixEntry {
+  visa_type?: string;
+  days?: number | null;
+  label?: string;
+  raw?: string;
+}
+

@@ -33,6 +33,7 @@ export function CountryFlag({ code, size = 'md', className = '' }: CountryFlagPr
     <span
       className={`relative inline-flex items-center justify-center rounded-[3px] overflow-hidden shadow-xs border border-white/15 shrink-0 bg-zinc-800 ${sizeClasses} ${className}`}
     >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={`https://flagcdn.com/w40/${normalizedCode}.png`}
         srcSet={`https://flagcdn.com/w80/${normalizedCode}.png 2x`}
