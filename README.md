@@ -11,6 +11,21 @@
 
 > 🌐 **Clickable Live Production Application**: [https://globepass-visa.vercel.app/](https://globepass-visa.vercel.app/)
 
+<div align="center">
+  <a href="https://globepass-visa.vercel.app/" target="_blank">
+    <img src="./docs/screenshots/hero-preview.png" alt="GlobePass Production Hero Interface" width="100%" />
+  </a>
+</div>
+
+---
+
+## 📸 Visual Showcase & Interface Architecture
+
+| 📱 Mobile Responsive Experience | 📋 Consular Intelligence Dossier & Interactive Checklist |
+| :---: | :---: |
+| <img src="./docs/screenshots/mobile-preview.png" alt="GlobePass Mobile Responsive Interface" width="340" /> | <img src="./docs/screenshots/visa-intelligence-result.png" alt="Consular Intelligence Dossier" width="560" /> |
+| **Defensive Mobile UX**<br/>Fluid 375px viewport, adaptive bottom tab bar & touch-friendly country selectors | **AI-Powered Synthesis**<br/>Instant visa classification, stay limits, processing windows, fees & interactive checklist |
+
 ---
 
 ## 🏛️ The 7 Product Pillars
@@ -173,11 +188,14 @@ globepass-visa/
 │   │   │   ├── layout.tsx        # Root layout & bilingual fonts
 │   │   │   └── page.tsx          # Main interactive application page
 │   │   ├── components/
-│   │   │   ├── CitySilhouette.tsx# Kinetic architectural skyline component
-│   │   │   ├── CountryCard.tsx   # Popular destination cards
-│   │   │   ├── VisaResult.tsx    # Consular guide dossier & step timeline
-│   │   │   ├── Navbar.tsx        # Clean brand navbar & language toggle
-│   │   │   └── ui/               # Modular UI controls
+│   │   │   ├── SearchHero.tsx         # Symmetrical origin/destination terminal & swap
+│   │   │   ├── DestinationGallery.tsx # Popular destinations carousel & live photography
+│   │   │   ├── SummaryCard.tsx        # High-density immigration memo & consular metrics
+│   │   │   ├── DocumentChecklist.tsx  # Interactive reactive document checklist
+│   │   │   ├── TimelineSteps.tsx      # Step-by-step consular application roadmap
+│   │   │   ├── OfficialLinkCard.tsx   # Verified embassy & government portal routing
+│   │   │   ├── WorldCitySkyline.tsx   # Kinetic architectural skyline silhouettes
+│   │   │   └── Navbar.tsx             # Clean brand navbar & language toggle
 │   │   ├── lib/
 │   │   │   ├── api.ts            # Dynamic client API & failover handler
 │   │   │   ├── i18n.ts           # Thai & English translation dictionaries
